@@ -1,4 +1,5 @@
 import { ModeToggle } from '@/components/change-mode';
+import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import Image from 'next/image';
 
 export default function Home() {
@@ -16,7 +17,17 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="border rounded-xl">xxx</div>
+        <div className="border rounded-xl">
+          <div className="grid justify-center items-center gap-8">
+            <TypographyPattern type="h1" text={'xxxxxxxxxxxxxxxxxxxxxxxxxxx'} />
+            <div className="">
+              <TypographyPattern
+                type="p"
+                text={'xxxxxxxxxxxxxxxxxxxxxxxxxxx'}
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
       <footer>
