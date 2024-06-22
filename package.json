@@ -45,6 +45,21 @@
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.tsx": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "pnpm": {
     "overrides": {
       "glob": "^10.4.2",
