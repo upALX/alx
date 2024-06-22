@@ -3,6 +3,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { mergeStyle } from '@/lib/utils';
+import { ModeToggle } from '@/components/change-mode';
 
 const mainFont = FontSans({
   subsets: ['latin'],
@@ -33,7 +34,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="">
+            <ModeToggle />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
