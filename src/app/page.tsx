@@ -1,15 +1,21 @@
-import { ModeToggle } from '@/components/change-mode';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
 import Image from 'next/image';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between ">
-      <header className=""></header>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-12">
-        <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 items-center justify-center ">
+        <div className="relative z-[-1] flex justify-center items-center before:absolute before:h-[300px] before:w-full before:left-1/2 before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:left-1/3 after:translate-x-1/3 after:bg-gradient-conic from-sky-200 via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
           <Image
             className="rounded-xl border-2 border-slate-950 dark:border-gray-400"
             src="https://avatars.githubusercontent.com/u/59508016?v=4"
@@ -19,32 +25,37 @@ export default function Home() {
             priority
           />
         </div>
-        <Card className="border-none flex flex-col justify-center items-start ">
+        <Card className="border-none flex flex-col ">
           <CardHeader>
-            <CardTitle>
-              <h1 className="text-2xl font-bold leading-tight text-gray-800 dark:text-white">
-                What i cannot create,{' '}
-                <span className="text-blue-700">i do not understand.</span>
-              </h1>
+            <CardTitle className="flex ">
+              <span className="text-2xl font-bold leading-tight text-gray-800 dark:text-white">
+                What i cannot create,
+              </span>
+              <span className="text-2xl text-blue-700 ml-2">
+                i do not understand.
+              </span>
             </CardTitle>
           </CardHeader>
-          <CardContent className="grid">
-            <div className="text-pretty text-xl">
+
+          <CardContent>
+            <div className="text-pretty text-xl flex justify-center items-center">
               <TypographyPattern
                 type="p"
-                text="I believe the power of
-              learning anything lives in practice and consistency over time.
-              This means that learning N things is a matter of one or two years;
-              Being eloquent in one of them takes half a lifetime"
+                text="I believe the power of learning anything lives in practice and consistency over time. This means that learning N things is a matter of one or two years; Being eloquent in one of them takes half a lifetime"
               />
             </div>
-            <div className="flex mt-12 justify-center gap-12">
-              <Button variant={'default'} size={'lg'} className="">
-                Linkedin
-              </Button>
-              <Button variant={'default'} size={'lg'}>
-                Github
-              </Button>
+            <div className="mt-12 flex flex-col items-center justify-center gap-8">
+              <div className="text-center">
+                <TypographyPattern type="h4" text={'Find me'} />
+              </div>
+              <div className="flex gap-4 justify-center">
+                <Button variant={'default'} size={'lg'}>
+                  Linkedin
+                </Button>
+                <Button variant={'default'} size={'lg'}>
+                  Github
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>

@@ -4,6 +4,14 @@ import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { mergeStyle } from '@/lib/utils';
 import { ModeToggle } from '@/components/change-mode';
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+} from '@/components/ui/navigation-menu';
 
 const mainFont = FontSans({
   subsets: ['latin'],
@@ -34,10 +42,30 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="">
-            <ModeToggle />
-            {children}
-          </div>
+          <header className="w-full flex justify-center items-center py-4">
+            {' '}
+            {/* Adjusted for center alignment and padding */}
+            <div className="flex items-center gap-8">
+              {' '}
+              {/* Container for both components */}
+              <NavigationMenu>
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>About</NavigationMenuTrigger>
+                    <NavigationMenuContent></NavigationMenuContent>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger>About</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <NavigationMenuLink>lol</NavigationMenuLink>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+              <ModeToggle />
+            </div>
+          </header>
+          {children}
         </ThemeProvider>
       </body>
     </html>
