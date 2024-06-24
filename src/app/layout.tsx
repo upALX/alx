@@ -42,12 +42,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="w-full flex justify-center items-center py-4">
-            {' '}
-            {/* Adjusted for center alignment and padding */}
-            <div className="flex items-center gap-8">
-              {' '}
-              {/* Container for both components */}
+          <header className="w-full flex justify-between items-center py-4 px-4">
+            {/* Navigation menu centered */}
+            <div className="flex-1 flex justify-center">
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -62,6 +59,10 @@ export default function RootLayout({
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
+            </div>
+
+            {/* ModeToggle aligned to the right */}
+            <div className="flex-initial">
               <ModeToggle />
             </div>
           </header>
