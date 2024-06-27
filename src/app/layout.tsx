@@ -12,6 +12,7 @@ import {
   NavigationMenuContent,
   NavigationMenuLink,
 } from '@/components/ui/navigation-menu';
+import { NavigationMenuALX } from '@/components/patterns/menu-pattern';
 
 const mainFont = FontSans({
   subsets: ['latin'],
@@ -45,20 +46,7 @@ export default function RootLayout({
           <header className="w-full flex justify-between items-center py-4 px-4">
             {/* Navigation menu centered */}
             <div className="flex-1 flex justify-center">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>About</NavigationMenuTrigger>
-                    <NavigationMenuContent></NavigationMenuContent>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>About</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <NavigationMenuLink>lol</NavigationMenuLink>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
+              <NavigationMenuALX />
             </div>
 
             {/* ModeToggle aligned to the right */}

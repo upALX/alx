@@ -1,0 +1,22 @@
+{
+  "cards_timeline": [
+    {
+      "title": "ROCK",
+      "badge": "Atual",
+      "description": "This is the first article",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec"
+    },
+    {
+      "title": "QI TECH",
+      "badge": "2 anos",
+      "description": "This is the first article",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec"
+    },
+    {
+      "title": "Article 1",
+      "badge": "2024",
+      "description": "This is the first article",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec"
+    }
+  ]
+}
