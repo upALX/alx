@@ -1,14 +1,13 @@
-import { AccordionALX } from '@/components/patterns/accourdion-pattern';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'ALX inc - Homepage',
+  description: 'Home page',
+};
 
 export default function Home() {
   return (
@@ -58,7 +57,6 @@ export default function Home() {
           </Card>
         </div>
       </div>
-      <AccordionALX />
       <footer>
         <div className="flex flex-col justify-end items-center lg:flex-row lg:justify-around lg:items-end mb-12">
           <a

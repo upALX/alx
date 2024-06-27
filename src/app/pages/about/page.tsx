@@ -10,6 +10,13 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'ALX inc - Sobre',
+  description: 'About page',
+};
+
 export default function AboutPage() {
   return (
     <>
