@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['avatars.githubusercontent.com'],
+    domains: [
+      'avatars.githubusercontent.com',
+      'github-stats-readme-langs.vercel.app',
+      'stats-github-app.vercel.app',
+    ],
   },
   async rewrites() {
     return [
