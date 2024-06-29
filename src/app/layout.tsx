@@ -44,12 +44,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <header className="w-full flex justify-between items-center py-4 px-4">
-            {/* Navigation menu centered */}
             <div className="flex-1 flex justify-center">
               <NavigationMenuALX />
             </div>
 
-            {/* ModeToggle aligned to the right */}
             <div className="flex-initial">
               <ModeToggle />
             </div>
