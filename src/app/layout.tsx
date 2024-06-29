@@ -3,6 +3,16 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { mergeStyle } from '@/lib/utils';
+import { ModeToggle } from '@/components/change-mode';
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+} from '@/components/ui/navigation-menu';
+import { NavigationMenuALX } from '@/components/patterns/menu-pattern';
 
 const mainFont = FontSans({
   subsets: ['latin'],
@@ -33,6 +43,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <header className="w-full flex justify-between items-center py-4 px-4">
+            <div className="flex-1 flex justify-center">
+              <NavigationMenuALX />
+            </div>
+
+            <div className="flex-initial">
+              <ModeToggle />
+            </div>
+          </header>
           {children}
         </ThemeProvider>
       </body>

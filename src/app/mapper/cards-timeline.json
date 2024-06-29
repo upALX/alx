@@ -1,0 +1,25 @@
+{
+  "cards_timeline": [
+    {
+      "id": "b1f9d0c8-252a-44df-9e83-2cffddc2733a",
+      "title": "ROCK",
+      "badge": "Atual",
+      "description": "This is the first article",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec"
+    },
+    {
+      "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
+      "title": "QI TECH",
+      "badge": "2 anos",
+      "description": "This is the first article",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec"
+    },
+    {
+      "uuid": "e63fd080-4270-4161-a58c-e77d86d5bf6a",
+      "title": "Article 1",
+      "badge": "2024",
+      "description": "This is the first article",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec"
+    }
+  ]
+}
