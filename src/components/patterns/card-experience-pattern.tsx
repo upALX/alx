@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BriefcaseBusiness } from 'lucide-react';
+import { BriefcaseBusiness, GraduationCap } from 'lucide-react';
 import { Button } from '../ui/button';
 import { PropsCardExperiencePattern } from '@/components/types/card-experience-pattern-types';
 
@@ -24,7 +24,11 @@ export function CardExperiencePattern(props: PropsCardExperiencePattern) {
             <Badge>{props.badge_description}</Badge>
           </span>
           <span>
-            <BriefcaseBusiness />
+            {props.type_experience === 'study' ? (
+              <GraduationCap />
+            ) : (
+              <BriefcaseBusiness />
+            )}
           </span>
         </div>
       </CardHeader>

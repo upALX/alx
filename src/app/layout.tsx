@@ -52,7 +52,7 @@ export default function RootLayout({
               <ModeToggle />
             </div>
           </header>
-          {children}
+          <div className="p-12">{children}</div>
         </ThemeProvider>
       </body>
     </html>

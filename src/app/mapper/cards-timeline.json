@@ -2,27 +2,54 @@
   "cards_timeline": [
     {
       "id": "b1f9d0c8-252a-44df-9e83-2cffddc2733a",
-      "title": "ROCK",
-      "badge_description": "Atual",
-      "description": "This is the first article",
+      "title": "ROCK - Full Stack Engineer",
+      "badge_description": "Current",
+      "description": "Mid Level Engineer",
+      "text_content": "On a Rock my propose is create and coordinate all technology ",
+      "type_experience": "work",
+      "see_more_link": ""
+    },
+    {
+      "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
+      "title": "Math and Statistics",
+      "badge_description": "2022 - 2023",
+      "description": "MBA degree",
+      "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec",
+      "type_experience": "study",
+      "see_more_link": ""
+    },
+    {
+      "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
+      "title": "QI TECH - Full Stack Engineer",
+      "badge_description": "2 years",
+      "description": "Junior to Mid level Engineer",
       "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec",
       "type_experience": "work",
       "see_more_link": ""
     },
     {
       "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
-      "title": "QI TECH",
-      "badge_description": "2 anos",
-      "description": "This is the first article",
+      "title": "Data Analysis",
+      "badge_description": "2021 - 2022",
+      "description": "Specialization degree",
       "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec",
-      "type_experience": "",
-      "see_more_link": "work"
+      "type_experience": "study",
+      "see_more_link": ""
+    },
+    {
+      "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
+      "title": "Information Security",
+      "badge_description": "2021 - 2022",
+      "description": "MBA degree",
+      "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec",
+      "type_experience": "study",
+      "see_more_link": ""
     },
     {
       "uuid": "e63fd080-4270-4161-a58c-e77d86d5bf6a",
-      "title": "Article 1",
-      "badge_description": "2024",
-      "description": "This is the first article",
+      "title": "Information Technology",
+      "badge_description": "2018 - 2021",
+      "description": "Major degree",
       "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Donec",
       "type_experience": "study",
       "see_more_link": ""

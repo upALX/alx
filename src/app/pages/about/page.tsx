@@ -28,48 +28,50 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 items-center justify-center">
-        <div className="flex flex-col justify-center gap-4 relative">
-          {cards_timeline.map((card, index) => (
-            <div key={index} className="relative flex flex-col items-center">
-              <CardExperiencePattern
-                title={card.title}
-                description={card.description}
-                badge_description={card.badge_description}
-                text_content={card.text_content}
-                type_experience={card.type_experience}
-                see_more_link={card.see_more_link}
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 items-start justify-start">
+      <div className="flex flex-col justify-start gap-4 relative">
+        {cards_timeline.map((card, index) => (
+          <div key={index} className="relative flex flex-col items-center">
+            <CardExperiencePattern
+              title={card.title}
+              description={card.description}
+              badge_description={card.badge_description}
+              text_content={card.text_content}
+              type_experience={card.type_experience}
+              see_more_link={card.see_more_link}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="flex flex-col justify-start gap-4">
+        <div className="flex w-full">
+          <TypographyPattern type="h3" text={'My numbers'} />
+        </div>
+        <div className="flex w-full items-center justify-center gap-4">
+          <Suspense fallback={'carregando'}>
+            <div className="flex w-2/3 ">
+              <Image
+                alt="Stats"
+                src={
+                  'https://github-stats-readme-langs.vercel.app/api/top-langs/?username=upalx&layout=compact&show_icons=true&theme=gotham&border_color=4584b6&title_color=4584b6&text_color=ffde57&bg_color=000000&hide=php,jupyter%20notebook&langs_count=7'
+                }
+                layout="responsive"
+                width={300}
+                height={100}
+                unoptimized
+                priority
               />
             </div>
-          ))}
+          </Suspense>
         </div>
-        <div className="flex flex-col gap-4">
-          <TypographyPattern type="h3" text={'Github stats'} />
-          <div className="flex w-full gap-4">
-            <Suspense fallback={'carregando'}>
-              <div className="w-1/3">
-                <Image
-                  alt="Stats"
-                  src={
-                    'https://github-stats-readme-langs.vercel.app/api/top-langs/?username=upalx&layout=compact&show_icons=true&theme=gotham&border_color=4584b6&title_color=4584b6&text_color=ffde57&bg_color=000000&hide=php,jupyter%20notebook&langs_count=7'
-                  }
-                  layout="responsive"
-                  width={300}
-                  height={100}
-                  unoptimized
-                  priority
-                />
-              </div>
-            </Suspense>
-          </div>
-          <Separator />
-          <div className="w-full">
-            <TypographyPattern type="h3" text={'FAQ'} />
+        <Separator />
+        <div className="w-full">
+          <TypographyPattern type="h3" text={'FAQ'} />
+          <div className="flex items-center justify-center">
             <AccordionALX />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
