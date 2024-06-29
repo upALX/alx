@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 import { SOCIAL_LINKS } from '../../constants';
 import Link from 'next/link';
 import { Github, Code } from 'lucide-react';
+import { HeroHighlightPattern } from '@/components/patterns/text-color-pattern';
 
 export const metadata: Metadata = {
   title: 'ALX inc - Homepage',
@@ -49,7 +50,7 @@ export default function Home() {
                 />
               </div>
               <div className="mt-12 flex flex-col items-center justify-center gap-8">
-                <TypographyPattern type="h4" text={'Find me'} />
+                <HeroHighlightPattern colorizeText="Find me" />
                 <div className="flex gap-4">
                   <Link
                     href={SOCIAL_LINKS.LINKEDIN}
