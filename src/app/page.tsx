@@ -8,6 +8,7 @@ import { SOCIAL_LINKS } from '../../constants';
 import Link from 'next/link';
 import { Github, Code } from 'lucide-react';
 import { HeroHighlightPattern } from '@/components/patterns/text-color-pattern';
+import { FlipWords } from '@/components/ui/flip-word';
 
 export const metadata: Metadata = {
   title: 'ALX inc - Homepage',
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
 };
 
 // const router = useRouter();
+
+const phrases = ['I do not understand', 'i cannot understand'];
 
 export default function Home() {
   return (
@@ -38,7 +41,7 @@ export default function Home() {
                   What I cannot create,
                 </span>
                 <span className="text-2xl text-blue-700 ml-2">
-                  I do not understand.
+                  <FlipWords words={phrases} type="phrases" />
                 </span>
               </CardTitle>
             </CardHeader>
