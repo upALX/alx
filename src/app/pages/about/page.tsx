@@ -1,3 +1,5 @@
+'use client';
+
 import { AccordionALX } from '@/components/patterns/accourdion-pattern';
 import { BriefcaseBusiness, SeparatorVerticalIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -21,10 +23,6 @@ import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
 import { Separator } from '@/components/ui/separator';
 
-export const metadata: Metadata = {
-  title: 'ALX inc - Sobre',
-  description: 'About page',
-};
 
 export default function AboutPage() {
   // TODO bater no github e pegar dados
@@ -54,6 +52,7 @@ export default function AboutPage() {
     const fetchData = async () => {
       try {
         const data = await fetchUserRepos('upALX', githubAPIKey!);
+        console.log('github data getted: ', data);
         setGithubData(data);
       } catch (err) {
         if (err instanceof Error) {
