@@ -16,7 +16,7 @@ import { faq_information } from '@/app/mapper/faq-information.json';
 import Image from 'next/image';
 import { EXTERNAL_DATA_LINKS } from '../../../../constants';
 import { ImagePatternALX } from '@/components/patterns/image-pattern';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
 import { Separator } from '@/components/ui/separator';
@@ -27,6 +27,82 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  // TODO bater no github e pegar dados
+
+  const fetchUserRepos = async (username: string, apiKey: string) => {
+    const response = await fetch(`https://api.github.com/users/${username}`, {
+      headers: {
+        Authorization: `token ${apiKey}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+
+    const repos = await response.json();
+    return repos;
+  };
+
+  const [githubData, setGithubData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const githubAPIKey = process.env.NEXT_PUBLIC_GITHUB_API_KEY;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchUserRepos('upALX', githubAPIKey!);
+        console.log('github data getted: ', data);
+        setGithubData(data);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError('An unknown error occurred');
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+  // const GITHUB_DATA = fetch("https://api.github.com/users/upALX")
+
+  console.log(githubData);
+
+  const PUBLIC_REPOS =
+    (githubData?.public_repos || 0) + (githubData?.total_private_repos || 0);
+  console.log(PUBLIC_REPOS);
+
+  // TODO pegar os dados public_repos e total_private_repos
+
+  const PHRASER = [
+    {
+      text: 'Total',
+    },
+    {
+      text: 'of',
+    },
+    {
+      text: 'projects',
+    },
+    {
+      text: `${PUBLIC_REPOS}`,
+      className: 'text-blue-500 dark:text-blue-500',
+    },
+  ];
+
   return (
     <div className="grid sm:grid-cols-1 md:grid-cols-2 items-start justify-start">
       <div className="flex flex-col justify-start gap-4 relative">
