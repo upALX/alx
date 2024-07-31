@@ -1,3 +1,5 @@
+'use client';
+
 import { AccordionALX } from '@/components/patterns/accourdion-pattern';
 import { BriefcaseBusiness, SeparatorVerticalIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -16,91 +18,134 @@ import { faq_information } from '@/app/mapper/faq-information.json';
 import Image from 'next/image';
 import { EXTERNAL_DATA_LINKS } from '../../../../constants';
 import { ImagePatternALX } from '@/components/patterns/image-pattern';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
-import { Separator } from '@radix-ui/react-dropdown-menu';
+import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
+import { Separator } from '@/components/ui/separator';
 
-export const metadata: Metadata = {
-  title: 'ALX inc - Sobre',
-  description: 'About page',
-};
 
 export default function AboutPage() {
-  return (
-    <>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 items-center justify-center">
-        <div className="flex flex-col justify-center gap-4 relative">
-          {cards_timeline.map((card, index) => (
-            <div key={index} className="relative flex flex-col items-center">
-              {/* Vertical line for the timeline */}
-              {index !== 0 && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300 z-0">
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-full w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-gray-300"></div>
-                </div>
-              )}
-              {/* Card */}
-              <Card className="w-2/3 relative z-10">
-                <CardHeader className="grid grid-cols-2">
-                  <div>
-                    <CardTitle>{card.title}</CardTitle>
-                    <CardDescription>{card.description}</CardDescription>
-                  </div>
-                  <div className="flex justify-end gap-4">
-                    <span>
-                      <Badge>{card.badge}</Badge>
-                    </span>
-                    <span>
-                      <BriefcaseBusiness />
-                    </span>
-                  </div>
-                </CardHeader>
-                <CardContent>{card.content}</CardContent>
-                <CardFooter>
-                  <Button variant={'link'}>See more</Button>
-                </CardFooter>
-              </Card>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-col gap-4">
-          <TypographyPattern type="h3" text={'Github stats'} />
-          <div className="flex w-full gap-4">
-            <Suspense fallback={'carregando'}>
-              <div className="w-full">
-                <Image
-                  alt="Stats"
-                  src={
-                    'https://stats-github-app.vercel.app?user=upalx&theme=python-dark'
-                  }
-                  layout="responsive"
-                  width={300}
-                  height={100}
-                  unoptimized
-                  priority
-                />
-              </div>
+  // TODO bater no github e pegar dados
 
-              <div className="w-2/3">
-                <Image
-                  alt="Stats"
-                  src={
-                    'https://github-stats-readme-langs.vercel.app/api/top-langs/?username=upalx&layout=compact&show_icons=true&theme=gotham&border_color=4584b6&title_color=4584b6&text_color=ffde57&bg_color=000000&hide=php,jupyter%20notebook&langs_count=7'
-                  }
-                  layout="responsive"
-                  width={300}
-                  height={100}
-                  unoptimized
-                  priority
-                />
-              </div>
-            </Suspense>
+  const fetchUserRepos = async (username: string, apiKey: string) => {
+    const response = await fetch(`https://api.github.com/users/${username}`, {
+      headers: {
+        Authorization: `token ${apiKey}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+
+    const repos = await response.json();
+    return repos;
+  };
+
+  const [githubData, setGithubData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const githubAPIKey = process.env.NEXT_PUBLIC_GITHUB_API_KEY;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchUserRepos('upALX', githubAPIKey!);
+        console.log('github data getted: ', data);
+        setGithubData(data);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError('An unknown error occurred');
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+  // const GITHUB_DATA = fetch("https://api.github.com/users/upALX")
+
+  console.log(githubData);
+
+  const PUBLIC_REPOS =
+    (githubData?.public_repos || 0) + (githubData?.total_private_repos || 0);
+  console.log(PUBLIC_REPOS);
+
+  // TODO pegar os dados public_repos e total_private_repos
+
+  const PHRASER = [
+    {
+      text: 'Total',
+    },
+    {
+      text: 'of',
+    },
+    {
+      text: 'projects',
+    },
+    {
+      text: `${PUBLIC_REPOS}`,
+      className: 'text-blue-500 dark:text-blue-500',
+    },
+  ];
+
+  return (
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 items-start justify-start">
+      <div className="flex flex-col justify-start gap-4 relative">
+        {cards_timeline.map((card, index) => (
+          <div key={index} className="relative flex flex-col items-center">
+            <CardExperiencePattern
+              title={card.title}
+              description={card.description}
+              badge_description={card.badge_description}
+              text_content={card.text_content}
+              type_experience={card.type_experience}
+              see_more_link={card.see_more_link}
+            />
           </div>
-          <div className="w-full">
-            <TypographyPattern type="h3" text={'FAQ'} />
+        ))}
+      </div>
+      <div className="flex flex-col justify-start gap-4">
+        <div className="flex w-full">
+          <TypographyPattern type="h3" text={'My numbers'} />
+        </div>
+        <div className="flex w-full items-center justify-center gap-4">
+          <Suspense fallback={'carregando'}>
+            <div className="flex w-2/3 ">
+              <Image
+                alt="Stats"
+                src={
+                  'https://github-stats-readme-langs.vercel.app/api/top-langs/?username=upalx&layout=compact&show_icons=true&theme=gotham&border_color=4584b6&title_color=4584b6&text_color=ffde57&bg_color=000000&hide=php,jupyter%20notebook&langs_count=7'
+                }
+                layout="responsive"
+                width={300}
+                height={100}
+                unoptimized
+                priority
+              />
+            </div>
+          </Suspense>
+        </div>
+        <Separator />
+        <div className="w-full">
+          <TypographyPattern type="h3" text={'FAQ'} />
+          <div className="flex items-center justify-center">
             <AccordionALX />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
