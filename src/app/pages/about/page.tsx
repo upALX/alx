@@ -54,7 +54,6 @@ export default function AboutPage() {
     const fetchData = async () => {
       try {
         const data = await fetchUserRepos('upALX', githubAPIKey!);
-        console.log('github data getted: ', data);
         setGithubData(data);
       } catch (err) {
         if (err instanceof Error) {
