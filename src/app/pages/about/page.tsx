@@ -1,23 +1,8 @@
 'use client';
 
 import { AccordionALX } from '@/components/patterns/accourdion-pattern';
-import { BriefcaseBusiness, SeparatorVerticalIcon } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Metadata } from 'next';
 import { cards_timeline } from '@/app/mapper/cards-timeline.json';
-import { faq_information } from '@/app/mapper/faq-information.json';
 import Image from 'next/image';
-import { EXTERNAL_DATA_LINKS } from '../../../../constants';
-import { ImagePatternALX } from '@/components/patterns/image-pattern';
 import { Suspense, useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
@@ -42,7 +27,7 @@ export default function AboutPage() {
     return repos;
   };
 
-  const [githubData, setGithubData] = useState([]);
+  const [githubData, setGithubData] = useState({} as Record<string, unknown>);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
