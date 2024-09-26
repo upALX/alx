@@ -14,7 +14,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={mergeStyle('border-b', className)}
+    className={mergeStyle('', className)}
     {...props}
   />
 ));

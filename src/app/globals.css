@@ -99,14 +99,8 @@
   }
 }
 
-::-webkit-scrollbar {
-  width: 12px; /* Largura da barra de rolagem */
-  height: 12px;
-}
-
 ::-webkit-scrollbar-track {
   background: #0e2c0a; /* Cor do fundo da barra */
-  border-radius: 30px; /* Arredondamento da barra */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -127,5 +121,4 @@
 * {
   scrollbar-width: thin; /* Largura fina */
   scrollbar-color: #032247 transparent; /* Cor da barra e do fundo */
-  border-radius: 30px; /* Arredondamento da barra */
 }

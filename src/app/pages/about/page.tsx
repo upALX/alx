@@ -1,13 +1,27 @@
 'use client';
 
 import { AccordionALX } from '@/components/patterns/accourdion-pattern';
+import { BriefcaseBusiness, SeparatorVerticalIcon } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Metadata } from 'next';
 import { cards_timeline } from '@/app/mapper/cards-timeline.json';
+import { faq_information } from '@/app/mapper/faq-information.json';
 import Image from 'next/image';
+import { EXTERNAL_DATA_LINKS } from '../../../../constants';
+import { ImagePatternALX } from '@/components/patterns/image-pattern';
 import { Suspense, useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
 import { Separator } from '@/components/ui/separator';
-
 
 export default function AboutPage() {
   // TODO bater no github e pegar dados
@@ -27,7 +41,7 @@ export default function AboutPage() {
     return repos;
   };
 
-  const [githubData, setGithubData] = useState({} as Record<string, unknown>);
+  const [githubData, setGithubData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -104,24 +118,22 @@ export default function AboutPage() {
       </div>
       <div className="flex flex-col justify-start gap-4">
         <div className="flex w-full">
-          <TypographyPattern type="h3" text={'My numbers'} />
+          <TypographyPattern type="h2" text={'Numbers'} />
         </div>
         <div className="flex w-full items-center justify-center gap-4">
-          <Suspense fallback={'carregando'}>
-            <div className="flex w-2/3 ">
-              <Image
-                alt="Stats"
-                src={
-                  'https://github-stats-readme-langs.vercel.app/api/top-langs/?username=upalx&layout=compact&show_icons=true&theme=gotham&border_color=4584b6&title_color=4584b6&text_color=ffde57&bg_color=000000&hide=php,jupyter%20notebook&langs_count=7'
-                }
-                layout="responsive"
-                width={300}
-                height={100}
-                unoptimized
-                priority
-              />
-            </div>
-          </Suspense>
+          <div className="flex w-2/3 ">
+            <Image
+              alt="Stats"
+              src={
+                'https://github-stats-readme-langs.vercel.app/api/top-langs/?username=upalx&layout=compact&show_icons=true&theme=gotham&border_color=4584b6&title_color=4584b6&text_color=ffde57&bg_color=000000&hide=php,jupyter%20notebook&langs_count=7'
+              }
+              layout="responsive"
+              width={300}
+              height={100}
+              unoptimized
+              priority
+            />
+          </div>
         </div>
         <Separator />
         <div className="w-full">
