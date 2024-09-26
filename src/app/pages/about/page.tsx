@@ -7,9 +7,15 @@ import { useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
 import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { SOCIAL_LINKS } from '../../../../constants';
+import { Code, Github } from 'lucide-react';
 
 export default function AboutPage() {
   // TODO bater no github e pegar dados
+
+  const router = useRouter();
 
   const fetchUserRepos = async (username: string, apiKey: string) => {
     const response = await fetch(`https://api.github.com/users/${username}`, {
@@ -121,6 +127,16 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="flex justify-center">
+          <Button
+            onClick={() => {
+              router.push(SOCIAL_LINKS.GITHUB);
+            }}
+            variant={'link'}
+          >
+            All data was colected from my Github, click to see more.
+          </Button>
+        </div>
+        <div className="flex justify-center">
           <Separator className="w-2/3" />
         </div>
         <div className="w-full ">
@@ -129,6 +145,45 @@ export default function AboutPage() {
           </div>
           <div className="flex items-center justify-center">
             <AccordionALX />
+          </div>
+        </div>
+        <div className="w-full">
+          {/* Título centralizado */}
+          <div className="flex justify-center w-full mb-4">
+            <TypographyPattern type="h2" text={'Socials'} />
+          </div>
+
+          {/* Contêiner flexível que centraliza e justifica os itens */}
+          <div className="flex justify-center">
+            <div className="flex flex-col items-center lg:flex-row lg:justify-around w-1/3 break-words">
+              <a
+                href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+                className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
+                target="_blank"
+              >
+                <h2 className="mb-3 text-2xl font-semibold">
+                  Hacker Rank{' '}
+                  <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                    <Code />
+                  </span>
+                </h2>
+                <p className="text-sm">See more...</p>
+              </a>
+
+              <a
+                href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+                className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+                target="_blank"
+              >
+                <h2 className="mb-3 text-2xl font-semibold">
+                  Github{' '}
+                  <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                    <Github />
+                  </span>
+                </h2>
+                <p className=" text-sm">See more...</p>
+              </a>
+            </div>
           </div>
         </div>
       </div>
