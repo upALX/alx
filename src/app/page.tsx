@@ -24,7 +24,17 @@ export default function Home() {
     <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-grow flex flex-col items-center justify-center">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center px-4">
-          <Card className="border-none flex flex-col justify-start items-center text-center">
+          <div className="relative flex justify-center items-center">
+            <Image
+              className="rounded-xl border-2 border-slate-950 dark:border-gray-400"
+              src="https://avatars.githubusercontent.com/u/59508016?v=4"
+              alt="ALX Picture"
+              width={450}
+              height={220}
+              priority
+            />
+          </div>
+          <Card className="border-none flex flex-col justify-start items-center text-center sm:order-none md:order-first">
             <CardHeader>
               <CardTitle>
                 <span className="text-2xl font-bold leading-tight text-gray-800 dark:text-white">
@@ -36,7 +46,7 @@ export default function Home() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-pretty text-xl">
+              <div className="text-pretty text-xl max-w-[600px]">
                 <TypographyPattern
                   type="p"
                   text="I believe the power of learning anything lives in practice and consistency over time. This means that learning N things is a matter of one or two years; Being eloquent in one of them takes half a lifetime"
@@ -67,16 +77,6 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
-          <div className="relative flex justify-center items-center">
-            <Image
-              className="rounded-xl border-2 border-slate-950 dark:border-gray-400"
-              src="https://avatars.githubusercontent.com/u/59508016?v=4"
-              alt="ALX Picture"
-              width={450}
-              height={220}
-              priority
-            />
-          </div>
         </div>
       </main>
       <footer className="w-full flex justify-center mt-auto mb-12">
