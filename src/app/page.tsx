@@ -6,7 +6,6 @@ import { Metadata } from 'next';
 // import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../constants';
 import Link from 'next/link';
-import { Github, Code } from 'lucide-react';
 import { HeroHighlightPattern } from '@/components/patterns/text-color-pattern';
 import { FlipWords } from '@/components/ui/flip-word';
 
@@ -79,9 +78,6 @@ export default function Home() {
           </Card>
         </div>
       </main>
-      <footer className="w-full flex justify-center mt-auto mb-12">
-        
-      </footer>
     </div>
   );
 }

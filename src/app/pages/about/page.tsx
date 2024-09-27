@@ -107,7 +107,7 @@ export default function AboutPage() {
           </div>
         ))}
       </div>
-      <div className="flex flex-col justify-start gap-4">
+      <div className="flex flex-col justify-start gap-4 flex-grow">
         <div className="flex justify-center w-full">
           <TypographyPattern type="h2" text={'Numbers'} />
         </div>
@@ -148,12 +148,10 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="w-full">
-          {/* Título centralizado */}
           <div className="flex justify-center w-full mb-4">
             <TypographyPattern type="h2" text={'Socials'} />
           </div>
 
-          {/* Contêiner flexível que centraliza e justifica os itens */}
           <div className="flex justify-center">
             <div className="flex flex-col items-center lg:flex-row lg:justify-around w-1/3 break-words">
               <a
