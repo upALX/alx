@@ -2,7 +2,7 @@
 
 import { HeroHighlightPattern } from '@/components/patterns/text-color-pattern';
 import { Button } from '@/components/ui/button';
-import { Earth, Rocket } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -30,7 +30,7 @@ export default function NotFoundPage() {
           onClick={() => {
             router.push('/');
           }}
-          className="p-4 overflow-hidden "
+          className="p-4 overflow-hidden"
         >
           <div className="flex justify-center items-center">
             <Rocket className="animate-bounce" />
