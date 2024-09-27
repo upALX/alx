@@ -148,7 +148,9 @@ export default function AboutPage() {
             <AccordionALX />
           </div>
         </div>
-
+        <div className="flex justify-center">
+          <Separator className="w-2/3" />
+        </div>
         <div className="w-full">
           <div className="flex justify-center w-full mb-4">
             <TypographyPattern type="h2" text={'Socials'} />
