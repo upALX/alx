@@ -10,7 +10,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../../../constants';
-import { Code, Github } from 'lucide-react';
+import { Code, Github, Rocket } from 'lucide-react';
 
 export default function AboutPage() {
   // TODO bater no github e pegar dados
@@ -58,13 +58,6 @@ export default function AboutPage() {
     fetchData();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
   // const GITHUB_DATA = fetch("https://api.github.com/users/upALX")
 
   console.log(githubData);
@@ -91,8 +84,12 @@ export default function AboutPage() {
     },
   ];
 
-  return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 items-start justify-start">
+  return loading ? (
+    <div className="flex justify-center items-center h-screen">
+      <Rocket className="animate-bounce" />
+    </div>
+  ) : (
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 items-start justify-start gap-4">
       <div className="flex flex-col justify-start gap-4 relative">
         {cards_timeline.map((card, index) => (
           <div key={index} className="relative flex flex-col items-center">
@@ -107,12 +104,13 @@ export default function AboutPage() {
           </div>
         ))}
       </div>
-      <div className="flex flex-col justify-start gap-4 flex-grow">
-        <div className="flex justify-center w-full">
+      <div className="flex flex-col justify-evenly gap-4 flex-grow h-full">
+        <div className="flex justify-center w-full sm:mt-4">
           <TypographyPattern type="h2" text={'Numbers'} />
         </div>
+
         <div className="flex w-full items-center justify-center gap-4">
-          <div className="flex w-2/3 ">
+          <div className="flex w-2/3">
             <Image
               alt="Stats"
               src={
@@ -126,6 +124,7 @@ export default function AboutPage() {
             />
           </div>
         </div>
+
         <div className="flex justify-center">
           <Button
             onClick={() => {
@@ -133,13 +132,15 @@ export default function AboutPage() {
             }}
             variant={'link'}
           >
-            All data was colected from my Github, click to see more.
+            All data was collected from my Github, click to see more.
           </Button>
         </div>
+
         <div className="flex justify-center">
           <Separator className="w-2/3" />
         </div>
-        <div className="w-full ">
+
+        <div className="w-full">
           <div className="flex justify-center w-full">
             <TypographyPattern type="h2" text={'FAQ'} />
           </div>
@@ -147,6 +148,7 @@ export default function AboutPage() {
             <AccordionALX />
           </div>
         </div>
+
         <div className="w-full">
           <div className="flex justify-center w-full mb-4">
             <TypographyPattern type="h2" text={'Socials'} />
@@ -179,7 +181,7 @@ export default function AboutPage() {
                     <Github />
                   </span>
                 </h2>
-                <p className=" text-sm">See more...</p>
+                <p className="text-sm">See more...</p>
               </a>
             </div>
           </div>
