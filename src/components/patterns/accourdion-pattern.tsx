@@ -9,23 +9,25 @@ export function AccordionALX() {
   return (
     <Accordion type="single" collapsible className="w-2/3">
       <AccordionItem value="item-1">
-        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionTrigger>
+          How much programming time do you have?
+        </AccordionTrigger>
         <AccordionContent>
-          Yes. It adheres to the WAI-ARIA design pattern.
+          I have more than 7 years of programming, including college and
+          postgraduate years.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Is it styled?</AccordionTrigger>
+        <AccordionTrigger>How much work time do you have?</AccordionTrigger>
         <AccordionContent>
-          Yes. It comes with default styles that matches the other
-          components&apos; aesthetic.
+          I have more than two years working as a Full Stack Engineer.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>Is it animated?</AccordionTrigger>
+        <AccordionTrigger>What stacks am I familiar with?</AccordionTrigger>
         <AccordionContent>
-          Yes. It&apos;s animated by default, but you can disable it if you
-          prefer.
+          Python with Django, Flask and Falcon. Java with Spring and Spring
+          Boot. Typescript with NodeJS, NestJS, ReactJS and NextJS.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
