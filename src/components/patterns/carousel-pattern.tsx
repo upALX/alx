@@ -52,18 +52,16 @@ export default function CarouselPattern(props: CarouselPatternProps) {
                   </div>
 
                   <div className="presentation__buttons-link flex space-x-4">
-                    <Button className="rounded-full">
-                      <>
-                        <Link href={item.githubPath}></Link>
+                    <Link href={item.githubPath} target="_blank">
+                      <Button className="rounded-full">
                         <CodeXml className="w-4 h-4 hover:animate-spin" />
-                      </>
-                    </Button>
-                    <Button className="rounded" variant={'outline'}>
-                      <>
-                        <Link href={item.videoPath}></Link>
+                      </Button>
+                    </Link>
+                    <Link href={item.videoPath} target="_blank">
+                      <Button className="rounded" variant={'outline'}>
                         <Video className="w-4 h-4 hover:animate-spin" />
-                      </>
-                    </Button>
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
