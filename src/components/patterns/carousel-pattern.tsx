@@ -1,4 +1,10 @@
-import { Card, CardContent } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 import {
   Carousel,
@@ -11,10 +17,13 @@ import {
 import * as React from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { CarouselPatternProps } from '@/components/types/carousel-pattern-types';
+import { CodeXml, Video } from 'lucide-react';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 export default function CarouselPattern(props: CarouselPatternProps) {
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false })
+    Autoplay({ delay: 7000, stopOnInteraction: false })
   );
 
   return (
@@ -29,8 +38,12 @@ export default function CarouselPattern(props: CarouselPatternProps) {
           <CarouselItem key={index}>
             <div className="p-2 sm:p-4">
               <Card>
+                <CardHeader className="flex justify-center items-center">
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                  <CardDescription>{item.text}</CardDescription>
+                </CardHeader>
                 <CardContent className="flex flex-col items-center justify-center w-full space-y-4">
-                  <div className="view_project">
+                  <div className="p-4">
                     <img
                       src={item.mainImagePath}
                       alt="Little girl constructing something"
@@ -38,31 +51,19 @@ export default function CarouselPattern(props: CarouselPatternProps) {
                     />
                   </div>
 
-                  <div className="presentation_content text-center px-4">
-                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                      {item.text}
-                    </p>
-                  </div>
-
                   <div className="presentation__buttons-link flex space-x-4">
-                    <button className="focus:outline-none">
-                      <a href={item.githubPath} target="_blank">
-                        <img
-                          className="w-6 h-6 sm:w-8 sm:h-8 transition-transform hover:scale-110"
-                          src="/assets/go-code.png"
-                          alt="Code link"
-                        />
-                      </a>
-                    </button>
-                    <button className="focus:outline-none">
-                      <a href={item.videoPath} target="_blank">
-                        <img
-                          className="w-6 h-6 sm:w-8 sm:h-8 transition-transform hover:scale-110"
-                          src="/assets/go-project.png"
-                          alt="Project demo link"
-                        />
-                      </a>
-                    </button>
+                    <Button className="rounded-full">
+                      <>
+                        <Link href={item.githubPath}></Link>
+                        <CodeXml className="w-4 h-4 hover:animate-spin" />
+                      </>
+                    </Button>
+                    <Button className="rounded" variant={'outline'}>
+                      <>
+                        <Link href={item.videoPath}></Link>
+                        <Video className="w-4 h-4 hover:animate-spin" />
+                      </>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
