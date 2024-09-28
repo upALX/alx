@@ -7,8 +7,9 @@ import {
   CardTitle,
 } from '../ui/card';
 import { ResponsiveContainer } from 'recharts';
-import { CardALXProps } from '../types/card-alx-types';
+import { CardALXProps } from '@/components/types/card-alx-types';
 import { mergeStyle } from '@/lib/utils';
+import { TooltipHoverCard } from '@/components/patterns/tooltip-hover-pattern';
 
 export function CardALX(props: CardALXProps) {
   let viewCard;
@@ -28,7 +29,7 @@ export function CardALX(props: CardALXProps) {
           <div className="flex w-full items-center justify-between">
             <div className="flex flex-col">
               {props.cardTitle && (
-                <CardTitle 
+                <CardTitle
                   className={
                     size === 'sm'
                       ? 'break-words text-sm font-medium'
