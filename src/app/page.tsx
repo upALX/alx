@@ -17,10 +17,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Main content area */}
       <main className="flex-grow flex flex-col items-center justify-center overflow-y-auto">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center px-4">
-          {/* Image section */}
           <div className="relative flex justify-center items-center">
             <Image
               className="rounded-xl border-2 border-slate-950 dark:border-gray-400"
@@ -32,7 +30,6 @@ export default function Home() {
             />
           </div>
 
-          {/* Card section */}
           <Card className="border-none flex flex-col justify-start items-center text-center sm:order-none md:order-first">
             <CardHeader>
               <CardTitle>
