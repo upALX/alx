@@ -14,15 +14,13 @@ export const metadata: Metadata = {
   description: 'Home page',
 };
 
-// const router = useRouter();
-
-const phrases = ['I do not understand', 'i cannot understand'];
-
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
-      <main className="flex-grow flex flex-col items-center justify-center">
+    <div className="flex flex-col min-h-screen">
+      {/* Main content area */}
+      <main className="flex-grow flex flex-col items-center justify-center overflow-y-auto">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center px-4">
+          {/* Image section */}
           <div className="relative flex justify-center items-center">
             <Image
               className="rounded-xl border-2 border-slate-950 dark:border-gray-400"
@@ -33,14 +31,19 @@ export default function Home() {
               priority
             />
           </div>
+
+          {/* Card section */}
           <Card className="border-none flex flex-col justify-start items-center text-center sm:order-none md:order-first">
             <CardHeader>
               <CardTitle>
-                <span className="text-2xl font-bold leading-tight text-gray-800 dark:text-white">
-                  What I cannot create,
-                </span>
                 <span className="text-2xl text-blue-700 ml-2">
-                  <FlipWords words={phrases} type="phrases" />
+                  <FlipWords
+                    words={[
+                      'What i cannot create, i do not understand',
+                      'Imagination is more important than knowledge.',
+                    ]}
+                    type="phrases"
+                  />
                 </span>
               </CardTitle>
             </CardHeader>

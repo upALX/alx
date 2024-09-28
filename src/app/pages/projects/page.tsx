@@ -1,6 +1,5 @@
 'use client';
 import { Card, CardContent } from '@/components/ui/card';
-import { Metadata } from 'next';
 
 import {
   Carousel,
@@ -19,7 +18,7 @@ export default function ProjectsPage() {
   );
 
   return (
-    <div className="grid place-items-center min-h-screen w-full overflow-hidden">
+    <div className="grid place-items-center w-full overflow-hidden">
       <Carousel
         plugins={[plugin.current]}
         className="w-11/12 sm:w-9/12 lg:w-8/12"
@@ -32,7 +31,6 @@ export default function ProjectsPage() {
               <div className="p-2 sm:p-4">
                 <Card>
                   <CardContent className="flex flex-col items-center justify-center w-full space-y-4">
-                    {/* Project Image */}
                     <div className="view_project">
                       <img
                         src={`/assets/weather-app.gif`}
@@ -41,7 +39,6 @@ export default function ProjectsPage() {
                       />
                     </div>
 
-                    {/* Project Description */}
                     <div className="presentation_content text-center px-4">
                       <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
                         A weather data API developed with NodeJS, NestJS,
@@ -49,7 +46,6 @@ export default function ProjectsPage() {
                       </p>
                     </div>
 
-                    {/* Project Buttons */}
                     <div className="presentation__buttons-link flex space-x-4">
                       <button className="focus:outline-none">
                         <a
