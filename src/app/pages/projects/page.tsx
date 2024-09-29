@@ -1,11 +1,14 @@
-import { AccordionALX } from '@/components/patterns/accourdion-pattern';
-import { Metadata } from 'next';
-export const metadata: Metadata = {
-  title: 'ALX inc - Projetos',
-  description: 'Projects page',
-};
+'use client';
+
+import { projects_information_list } from '@/app/mapper';
+import CarouselPattern from '@/components/patterns/carousel-pattern';
+
 export default function ProjectsPage() {
-  <div className="">
-    <AccordionALX />
-  </div>;
+  return (
+    <div className="grid place-items-center min-h-screen w-full overflow-hidden">
+      <div className="w-full max-w-full overflow-x-hidden box-border">
+        <CarouselPattern items={projects_information_list} />
+      </div>
+    </div>
+  );
 }

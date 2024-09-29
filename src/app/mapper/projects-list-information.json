@@ -1,0 +1,39 @@
+{
+  "projects_information_list": [
+    {
+      "title": "Help Creator",
+      "text": "A app that creates titles and descriptions based on media content input developed using IA integration with Node, Typescript, React and TailwindCSS.",
+      "mainImagePath": "/help-creator-resized.gif",
+      "githubPath": "https://github.com/upALX/helpCreator",
+      "videoPath": "https://youtu.be/fwN73qjPLRg"
+    },
+    {
+      "title": "Task API",
+      "text": "An task management API developed with Java, Spring Boot, Hibernate and Docker.",
+      "mainImagePath": "/task-api.gif",
+      "githubPath": "https://github.com/upALX/TaskAPI",
+      "videoPath": "https://youtu.be/8ONppXj427Y"
+    },
+    {
+      "title": "My notes",
+      "text": "A notes app developed with ReactJS, TailwindCSS, Typescript.",
+      "mainImagePath": "/mynotes.gif",
+      "githubPath": "https://github.com/alexandre-bouchard/weather-app",
+      "videoPath": "https://www.youtube.com/watch?v=l9eZ3g_V72k"
+    },
+    {
+      "title": "Polling API",
+      "text": "A polling API developed with Node, Typescript, Fastify, PostgreSQL, Redis, Prisma, Docker.",
+      "mainImagePath": "/pickme.gif",
+      "githubPath": "https://github.com/upALX/PickMe",
+      "videoPath": "https://youtu.be/hkVdXHjU7dk"
+    },
+    {
+      "title": "Weather",
+      "text": "A weather data API developed with NodeJS, NestJS, Typescript, PostgreSQL, TypeORM, Docker.",
+      "mainImagePath": "/weather-app.gif",
+      "githubPath": "https://github.com/upALX/Orpen-Weather",
+      "videoPath": "https://youtu.be/nFREOIxeqig"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type TypographyTypes = {
   type:
     | 'h1'
@@ -10,5 +12,5 @@ export type TypographyTypes = {
     | 'code'
     | 'cite'
     | 'strong';
-  text: string | number;
+  text: string | number | ReactNode;
 };

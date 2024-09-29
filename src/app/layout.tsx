@@ -5,6 +5,8 @@ import './globals.css';
 import { mergeStyle } from '@/lib/utils';
 import { ModeToggle } from '@/components/change-mode';
 import { NavigationMenuALX } from '@/components/patterns/menu-pattern';
+import { TypographyPattern } from '@/components/patterns/typography-pattern';
+import Link from 'next/link';
 
 const mainFont = FontSans({
   subsets: ['latin'],
@@ -25,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={mergeStyle(
-          'min-h-screen bg-background font-sans antialiased',
+          'bg-background font-sans antialiased flex flex-col min-h-screen',
           mainFont.variable
         )}
       >
@@ -44,9 +46,28 @@ export default function RootLayout({
               <ModeToggle />
             </div>
           </header>
-          <section>
-            <main className="">{children}</main>
-          </section>
+
+          <main className="flex-grow flex flex-col w-full">{children}</main>
+
+          <footer className="w-full my-4 p-2">
+            <div className="flex justify-center items-center">
+              <TypographyPattern
+                text={
+                  <>
+                    Don't copy, get inspired{' '}
+                    <Link target="_blank" href="https://github.com/upALX/alx">
+                      <span className="text-muted-foreground hover:bg-muted">
+                        {' '}
+                        here{' '}
+                      </span>
+                    </Link>{' '}
+                    <span className="underline">and give a star </span> ✨
+                  </>
+                }
+                type="cite"
+              />
+            </div>
+          </footer>
         </ThemeProvider>
       </body>
     </html>
