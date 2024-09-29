@@ -13,7 +13,7 @@ import { PropsCardExperiencePattern } from '@/components/types/card-experience-p
 
 export function CardExperiencePattern(props: PropsCardExperiencePattern) {
   return (
-    <Card className="w-2/3 relative z-10">
+    <Card className="sm:w-full md:w-10/12 relative z-10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:border hover:border-blue-500">
       <CardHeader className="grid grid-cols-2">
         <div>
           <CardTitle>{props.title}</CardTitle>

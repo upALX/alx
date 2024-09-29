@@ -90,21 +90,32 @@ export default function AboutPage() {
     </div>
   ) : (
     <div className="grid sm:grid-cols-1 md:grid-cols-2 items-start justify-start gap-4">
-      <div className="flex flex-col justify-start gap-4 relative">
+      <div className="flex flex-col gap-4 relative p-4">
+        <div className="flex justify-center">
+          <TypographyPattern text="Timeline" type="h2" />
+        </div>
         {cards_timeline.map((card, index) => (
-          <div key={index} className="relative flex flex-col items-center">
-            <CardExperiencePattern
-              title={card.title}
-              description={card.description}
-              badge_description={card.badge_description}
-              text_content={card.text_content}
-              type_experience={card.type_experience}
-              see_more_link={card.see_more_link}
-            />
+          <div
+            key={index}
+            className={`relative flex flex-col ${
+              index % 2 === 0 ? 'items-center' : 'items-end'
+            } `}
+          >
+            <div className="animate-float w-full sm:max-w-max ">
+              <CardExperiencePattern
+                title={card.title}
+                description={card.description}
+                badge_description={card.badge_description}
+                text_content={card.text_content}
+                type_experience={card.type_experience}
+                see_more_link={card.see_more_link}
+              />
+            </div>
           </div>
         ))}
       </div>
       <div className="flex flex-col justify-evenly gap-4 flex-grow h-full">
+        {/* Seção de Números */}
         <div className="flex justify-center w-full sm:mt-4">
           <TypographyPattern type="h2" text={'Numbers'} />
         </div>
@@ -125,6 +136,7 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* Botão para ver mais */}
         <div className="flex justify-center">
           <Button
             onClick={() => {
@@ -136,10 +148,12 @@ export default function AboutPage() {
           </Button>
         </div>
 
+        {/* Separador */}
         <div className="flex justify-center">
           <Separator className="w-2/3" />
         </div>
 
+        {/* Seção FAQ */}
         <div className="w-full">
           <div className="flex justify-center w-full">
             <TypographyPattern type="h2" text={'FAQ'} />
@@ -148,9 +162,13 @@ export default function AboutPage() {
             <AccordionALX />
           </div>
         </div>
+
+        {/* Outro Separador */}
         <div className="flex justify-center">
           <Separator className="w-2/3" />
         </div>
+
+        {/* Seção de Redes Sociais */}
         <div className="w-full">
           <div className="flex justify-center w-full mb-4">
             <TypographyPattern type="h2" text={'Socials'} />
@@ -160,7 +178,7 @@ export default function AboutPage() {
             <div className="flex flex-col items-center lg:flex-row lg:justify-around w-1/3 break-words">
               <a
                 href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
+                className="group rounded-lg border animate-wave border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
                 target="_blank"
               >
                 <h2 className="mb-3 text-2xl font-semibold">
@@ -174,7 +192,7 @@ export default function AboutPage() {
 
               <a
                 href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+                className="group rounded-lg animate-wave border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
                 target="_blank"
               >
                 <h2 className="mb-3 text-2xl font-semibold">
