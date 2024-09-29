@@ -29,7 +29,7 @@ export default function CarouselPattern(props: CarouselPatternProps) {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-11/12 sm:w-9/12 lg:w-8/12"
+      className="w-full sm:w-9/12 lg:w-8/12 mx-auto"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >

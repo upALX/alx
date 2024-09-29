@@ -5,8 +5,10 @@ import CarouselPattern from '@/components/patterns/carousel-pattern';
 
 export default function ProjectsPage() {
   return (
-    <div className="grid place-items-center  min-h-screen w-full overflow-hidden">
-      <CarouselPattern items={projects_information_list} />
+    <div className="grid place-items-center min-h-screen w-full overflow-hidden">
+      <div className="w-full max-w-full overflow-x-hidden box-border">
+        <CarouselPattern items={projects_information_list} />
+      </div>
     </div>
   );
 }
