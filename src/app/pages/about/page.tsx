@@ -58,31 +58,11 @@ export default function AboutPage() {
     fetchData();
   }, []);
 
-  // const GITHUB_DATA = fetch("https://api.github.com/users/upALX")
-
   console.log(githubData);
 
   const PUBLIC_REPOS =
     (githubData?.public_repos || 0) + (githubData?.total_private_repos || 0);
   console.log(PUBLIC_REPOS);
-
-  // TODO pegar os dados public_repos e total_private_repos
-
-  const PHRASER = [
-    {
-      text: 'Total',
-    },
-    {
-      text: 'of',
-    },
-    {
-      text: 'projects',
-    },
-    {
-      text: `${PUBLIC_REPOS}`,
-      className: 'text-blue-500 dark:text-blue-500',
-    },
-  ];
 
   return loading ? (
     <div className="flex justify-center items-center h-screen">
@@ -115,17 +95,15 @@ export default function AboutPage() {
         ))}
       </div>
       <div className="flex flex-col justify-evenly gap-4 flex-grow h-full">
-        {/* Seção de Números */}
-        <div className="flex justify-center w-full sm:mt-4">
-          <TypographyPattern type="h2" text={'Numbers'} />
-        </div>
-
-        <div className="flex w-full items-center justify-center gap-4">
+        <div className="flex flex-col w-full items-center justify-center gap-4">
+          <div className="flex justify-center w-full sm:mt-4">
+            <TypographyPattern type="h2" text={'Numbers'} />
+          </div>
           <div className="flex w-2/3">
             <Image
               alt="Stats"
               src={
-                'https://github-stats-readme-langs.vercel.app/api/top-langs/?username=upalx&layout=compact&show_icons=true&theme=gotham&border_color=4584b6&title_color=4584b6&text_color=ffde57&bg_color=000000&hide=php,jupyter%20notebook&langs_count=7'
+                'https://stats-github-app.vercel.app?user=upalx&theme=python-dark'
               }
               layout="responsive"
               width={250}
@@ -134,26 +112,22 @@ export default function AboutPage() {
               priority
             />
           </div>
+          <div className="flex justify-center">
+            <Button
+              onClick={() => {
+                router.push(SOCIAL_LINKS.GITHUB);
+              }}
+              variant={'link'}
+            >
+              All data was collected from my Github, click to see more.
+            </Button>
+          </div>
         </div>
 
-        {/* Botão para ver mais */}
-        <div className="flex justify-center">
-          <Button
-            onClick={() => {
-              router.push(SOCIAL_LINKS.GITHUB);
-            }}
-            variant={'link'}
-          >
-            All data was collected from my Github, click to see more.
-          </Button>
-        </div>
-
-        {/* Separador */}
         <div className="flex justify-center">
           <Separator className="w-2/3" />
         </div>
 
-        {/* Seção FAQ */}
         <div className="w-full">
           <div className="flex justify-center w-full">
             <TypographyPattern type="h2" text={'FAQ'} />
@@ -163,22 +137,20 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Outro Separador */}
         <div className="flex justify-center">
           <Separator className="w-2/3" />
         </div>
 
-        {/* Seção de Redes Sociais */}
         <div className="w-full">
           <div className="flex justify-center w-full mb-4">
             <TypographyPattern type="h2" text={'Socials'} />
           </div>
 
           <div className="flex justify-center">
-            <div className="flex flex-col items-center lg:flex-row lg:justify-around w-1/3 break-words">
+            <div className="flex flex-col items-center lg:flex-row lg:justify-center break-words">
               <a
                 href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                className="group rounded-lg border animate-wave border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
+                className="group rounded-lg border  border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
                 target="_blank"
               >
                 <h2 className="mb-3 text-2xl font-semibold">
@@ -192,10 +164,10 @@ export default function AboutPage() {
 
               <a
                 href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                className="group rounded-lg animate-wave border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+                className="group rounded-lg  border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
                 target="_blank"
               >
-                <h2 className="mb-3 text-2xl font-semibold">
+                <h2 className="mb-3 text-2xl font-semibold animation-wave">
                   Github{' '}
                   <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                     <Github />
