@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../../../constants';
 import { Code, Github, Rocket } from 'lucide-react';
+import { GithubDataTypes } from '@/app/types/about-types';
 
 export default function AboutPage() {
   // TODO bater no github e pegar dados
@@ -32,7 +33,7 @@ export default function AboutPage() {
     return repos;
   };
 
-  const [githubData, setGithubData] = useState([]);
+  const [githubData, setGithubData] = useState({} as GithubDataTypes);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -56,7 +57,7 @@ export default function AboutPage() {
     };
 
     fetchData();
-  }, []);
+  }, [githubAPIKey]);
 
   console.log(githubData);
 

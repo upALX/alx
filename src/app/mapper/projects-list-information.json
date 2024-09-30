@@ -2,7 +2,7 @@
   "projects_information_list": [
     {
       "title": "Help Creator",
-      "text": "A app that creates titles and descriptions based on media content input developed using IA integration with Node, Typescript, React and TailwindCSS.",
+      "text": "An application that creates titles and descriptions based on input from media content developed using AI model integration with Node, Typescript, React and TailwindCSS.",
       "mainImagePath": "/help-creator-resized.gif",
       "githubPath": "https://github.com/upALX/helpCreator",
       "videoPath": "https://youtu.be/fwN73qjPLRg"
@@ -18,19 +18,19 @@
       "title": "My notes",
       "text": "A notes app developed with ReactJS, TailwindCSS, Typescript.",
       "mainImagePath": "/mynotes.gif",
-      "githubPath": "https://github.com/alexandre-bouchard/weather-app",
-      "videoPath": "https://www.youtube.com/watch?v=l9eZ3g_V72k"
+      "githubPath": "https://github.com/upALX/MyNotes",
+      "videoPath": "https://youtu.be/hAAWWZE6CWo"
     },
     {
-      "title": "Polling API",
-      "text": "A polling API developed with Node, Typescript, Fastify, PostgreSQL, Redis, Prisma, Docker.",
+      "title": "Pick ME",
+      "text": "A real-time voting API using WebSocket. Developed with Node, Typescript, Fastify, PostgreSQL, Redis, Prisma, Docker.",
       "mainImagePath": "/pickme.gif",
       "githubPath": "https://github.com/upALX/PickMe",
       "videoPath": "https://youtu.be/hkVdXHjU7dk"
     },
     {
       "title": "Weather",
-      "text": "A weather data API developed with NodeJS, NestJS, Typescript, PostgreSQL, TypeORM, Docker.",
+      "text": "A weather API with push notification webhooks. Developed with NodeJS, NestJS, Typescript, PostgreSQL, TypeORM, Docker.",
       "mainImagePath": "/weather-app.gif",
       "githubPath": "https://github.com/upALX/Orpen-Weather",
       "videoPath": "https://youtu.be/nFREOIxeqig"

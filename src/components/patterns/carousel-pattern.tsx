@@ -20,6 +20,7 @@ import { CarouselPatternProps } from '@/components/types/carousel-pattern-types'
 import { CodeXml, Video } from 'lucide-react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function CarouselPattern(props: CarouselPatternProps) {
   const plugin = React.useRef(
@@ -44,13 +45,14 @@ export default function CarouselPattern(props: CarouselPatternProps) {
                 </CardHeader>
                 <CardContent className="flex flex-col items-center justify-center w-full space-y-4">
                   <div className="p-4">
-                    <img
+                    <Image
                       src={item.mainImagePath}
-                      alt="Little girl constructing something"
+                      alt="item image representation"
                       className="w-full h-auto max-h-64 sm:max-h-72 lg:max-h-96 rounded-lg shadow-lg object-cover"
+                      width={0}
+                      height={0}
                     />
                   </div>
-
                   <div className="presentation__buttons-link flex space-x-4">
                     <Link href={item.githubPath} target="_blank">
                       <Button className="rounded-full">

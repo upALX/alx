@@ -54,7 +54,7 @@ export default function RootLayout({
               <TypographyPattern
                 text={
                   <>
-                    Don't copy, get inspired{' '}
+                    Don&apos;t copy, get inspired{' '}
                     <Link target="_blank" href="https://github.com/upALX/alx">
                       <span className="text-muted-foreground hover:bg-muted">
                         {' '}
