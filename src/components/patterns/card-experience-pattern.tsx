@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { BriefcaseBusiness, GraduationCap } from 'lucide-react';
 import { Button } from '../ui/button';
 import { PropsCardExperiencePattern } from '@/components/types/card-experience-pattern-types';
+import Link from 'next/link';
 
 export function CardExperiencePattern(props: PropsCardExperiencePattern) {
   return (
@@ -34,7 +35,10 @@ export function CardExperiencePattern(props: PropsCardExperiencePattern) {
       </CardHeader>
       <CardContent>{props.text_content}</CardContent>
       <CardFooter>
-        <Button variant={'link'}>See more</Button>
+        <Button variant={'link'}>
+          {' '}
+          <Link href={props.see_more_link}> See more </Link>
+        </Button>
       </CardFooter>
     </Card>
   );

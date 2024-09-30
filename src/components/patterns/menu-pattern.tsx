@@ -6,15 +6,12 @@ import Link from 'next/link';
 import { mergeStyle } from '@/lib/utils';
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { WEBSITE_ROUTES } from '../../../constants';
-import { navigation_information } from '@/app/mapper/navigation-menu-information.json';
 
 // const components: { title: string; href: string; description: string }[] = [
 //   {
@@ -53,8 +50,6 @@ import { navigation_information } from '@/app/mapper/navigation-menu-information
 //       'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
 //   },
 // ];
-
-const navigationInformation = navigation_information.filter(item => item);
 
 export function NavigationMenuALX() {
   return (

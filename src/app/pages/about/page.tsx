@@ -149,7 +149,7 @@ export default function AboutPage() {
           <div className="flex justify-center">
             <div className="flex flex-col items-center lg:flex-row lg:justify-center break-words">
               <a
-                href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+                href="https://www.hackerrank.com/profile/alxinc"
                 className="group rounded-lg border  border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
                 target="_blank"
               >
@@ -163,7 +163,7 @@ export default function AboutPage() {
               </a>
 
               <a
-                href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+                href="https://github.com/upalx"
                 className="group rounded-lg  border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
                 target="_blank"
               >
