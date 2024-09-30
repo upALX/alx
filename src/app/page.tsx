@@ -36,8 +36,9 @@ export default function Home() {
                 <span className="text-2xl text-blue-700 ml-2">
                   <FlipWords
                     words={[
-                      'What i cannot create, i do not understand',
+                      'What i cannot create, i do not understand.',
                       'Imagination is more important than knowledge.',
+                      'If you cant explain it simply, you dont understand it well enough.',
                     ]}
                     type="phrases"
                   />
@@ -45,7 +46,7 @@ export default function Home() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-pretty text-xl max-w-[600px]">
+              <div className="text-pretty text-xl max-w-[750px]">
                 <TypographyPattern
                   type="p"
                   text="I believe the power of learning anything lives in practice and consistency over time. This means that learning N things is a matter of one or two years; Being eloquent in one of them takes half a lifetime"

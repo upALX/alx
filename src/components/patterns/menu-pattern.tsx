@@ -6,15 +6,12 @@ import Link from 'next/link';
 import { mergeStyle } from '@/lib/utils';
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { WEBSITE_ROUTES } from '../../../constants';
-import { navigation_information } from '@/app/mapper/navigation-menu-information.json';
 
 // const components: { title: string; href: string; description: string }[] = [
 //   {
@@ -54,8 +51,6 @@ import { navigation_information } from '@/app/mapper/navigation-menu-information
 //   },
 // ];
 
-const navigationInformation = navigation_information.filter(item => item);
-
 export function NavigationMenuALX() {
   return (
     <NavigationMenu>
@@ -75,6 +70,13 @@ export function NavigationMenuALX() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <Link href={WEBSITE_ROUTES.PROJECTS_PAGE} legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Projects
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -89,7 +91,7 @@ export function NavigationMenuALX() {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );

@@ -10,10 +10,11 @@ import { Badge } from '@/components/ui/badge';
 import { BriefcaseBusiness, GraduationCap } from 'lucide-react';
 import { Button } from '../ui/button';
 import { PropsCardExperiencePattern } from '@/components/types/card-experience-pattern-types';
+import Link from 'next/link';
 
 export function CardExperiencePattern(props: PropsCardExperiencePattern) {
   return (
-    <Card className="w-2/3 relative z-10">
+    <Card className="sm:w-full md:w-10/12 relative z-10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:border-slate-900 text-slate-900 bg-slate-100 dark:bg-slate-950 dark:hover:border-blue-400 dark:text-gray-300">
       <CardHeader className="grid grid-cols-2">
         <div>
           <CardTitle>{props.title}</CardTitle>
@@ -34,7 +35,10 @@ export function CardExperiencePattern(props: PropsCardExperiencePattern) {
       </CardHeader>
       <CardContent>{props.text_content}</CardContent>
       <CardFooter>
-        <Button variant={'link'}>See more</Button>
+        <Button variant={'link'}>
+          {' '}
+          <Link href={props.see_more_link}> See more </Link>
+        </Button>
       </CardFooter>
     </Card>
   );
