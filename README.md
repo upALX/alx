@@ -3,7 +3,7 @@ ALX
 
 **Overview**
 
-ALX is about ... 
+Just code it.
 
 🛠️*This project is under development*🛠️
 
@@ -30,9 +30,9 @@ If you has a NODE >= 20 installed on your desktop and Typescript latest version,
 ```
 git clone git@github.com:upALX/alx.git
 ```
-**2 - install all dependencies
+**2 - install all dependencies**
 ```
-virtualenv .venv --python=python3.11  
+pnpm i
 ```
 
 **3 - Run the webapp:** (use the pack that you like, i use pnpm)
