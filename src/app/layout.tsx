@@ -39,7 +39,7 @@ export default function RootLayout({
         >
           <ThemeEffect />
 
-          <header className="w-full flex justify-between items-center py-4 px-4 z-10">
+          <header className="w-full flex justify-between items-center py-4 px-4 ">
             <div className="flex-1 flex justify-center">
               <NavigationMenuALX />
             </div>
@@ -49,11 +49,9 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main className="flex-grow flex flex-col w-full z-10">
-            {children}
-          </main>
+          <main className="flex-grow flex flex-col w-full">{children}</main>
 
-          <footer className="w-full my-4 p-2 z-10">
+          <footer className="w-full my-4 p-2">
             <div className="flex justify-center items-center">
               <TypographyPattern
                 text={

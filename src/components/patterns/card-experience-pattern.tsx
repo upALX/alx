@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 export function CardExperiencePattern(props: PropsCardExperiencePattern) {
   return (
-    <Card className="sm:w-full md:w-10/12 relative z-10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:border-slate-900 text-slate-900 bg-slate-100 dark:bg-slate-950 dark:hover:border-blue-400 dark:text-gray-300">
+    <Card className="sm:w-full md:w-10/12 relative transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:border-slate-900 text-slate-900 bg-slate-100 dark:bg-slate-950 dark:hover:border-blue-400 dark:text-gray-300 hover:z-50">
       <CardHeader className="grid grid-cols-2">
         <div>
           <CardTitle>{props.title}</CardTitle>
