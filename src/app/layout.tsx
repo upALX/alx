@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={mergeStyle(
-          'bg-background font-sans antialiased flex flex-col min-h-screen',
+          'bg-background font-sans antialiased flex flex-col min-h-screen relative',
           mainFont.variable
         )}
       >
@@ -37,7 +37,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="w-full flex justify-between items-center py-4 px-4">
+          <ThemeEffect />
+
+          <header className="w-full flex justify-between items-center py-4 px-4 z-10">
             <div className="flex-1 flex justify-center">
               <NavigationMenuALX />
             </div>
@@ -47,9 +49,11 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main className="flex-grow flex flex-col w-full">{children}</main>
+          <main className="flex-grow flex flex-col w-full z-10">
+            {children}
+          </main>
 
-          <footer className="w-full my-4 p-2">
+          <footer className="w-full my-4 p-2 z-10">
             <div className="flex justify-center items-center">
               <TypographyPattern
                 text={
@@ -68,7 +72,6 @@ export default function RootLayout({
               />
             </div>
           </footer>
-          <ThemeEffect />
         </ThemeProvider>
       </body>
     </html>

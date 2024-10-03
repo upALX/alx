@@ -3,7 +3,7 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { StarsBackground } from '@/components/patterns/stars-background-pattern';
-import { ShootingStars } from '@/components/patterns/shooting-stars-baclground';
+import { ShootingStars } from '@/components/patterns/shooting-stars-background';
 
 export function ThemeEffect() {
   const { theme } = useTheme();
