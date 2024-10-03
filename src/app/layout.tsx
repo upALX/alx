@@ -1,5 +1,4 @@
-import type { Metadata } from 'next';
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from 'next-themes';
 import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { mergeStyle } from '@/lib/utils';
@@ -7,13 +6,14 @@ import { ModeToggle } from '@/components/change-mode';
 import { NavigationMenuALX } from '@/components/patterns/menu-pattern';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import Link from 'next/link';
+import { ThemeEffect } from '@/components/patterns/theme-effect-pattern';
 
 const mainFont = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'ALX inc.',
   description: 'Created by ALX Inc.',
 };
@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={mergeStyle(
-          'bg-background font-sans antialiased flex flex-col min-h-screen',
+          'bg-background font-sans antialiased flex flex-col min-h-screen relative',
           mainFont.variable
         )}
       >
@@ -37,7 +37,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="w-full flex justify-between items-center py-4 px-4">
+          <ThemeEffect />
+
+          <header className="w-full flex justify-between items-center py-4 px-4 ">
             <div className="flex-1 flex justify-center">
               <NavigationMenuALX />
             </div>

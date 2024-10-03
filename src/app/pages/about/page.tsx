@@ -82,7 +82,7 @@ export default function AboutPage() {
               index % 2 === 0 ? 'items-center' : 'items-end'
             } `}
           >
-            <div className="animate-float w-full sm:max-w-max ">
+            <div className="animate-float w-full sm:max-w-max dark:hover:z-20 ">
               <CardExperiencePattern
                 title={card.title}
                 description={card.description}
