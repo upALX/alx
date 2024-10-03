@@ -38,17 +38,17 @@ export default function CarouselPattern(props: CarouselPatternProps) {
         {props.items.map((item, index) => (
           <CarouselItem key={index}>
             <div className="p-2 sm:p-4">
-              <Card>
+              <Card className="transition-all duration-300 transform hover:scale-104 hover:shadow-lg hover:border-slate-900 text-slate-900 bg-slate-100 dark:bg-slate-950 dark:hover:border-blue-400 dark:text-gray-300 hover:z-20">
                 <CardHeader className="flex justify-center items-center">
                   <CardTitle className="text-xl">{item.title}</CardTitle>
                   <CardDescription>{item.text}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col items-center justify-center w-full space-y-4">
-                  <div className="p-4">
+                <CardContent className="flex flex-col items-center justify-center w-full space-y-4 z-20">
+                  <div className="p-4 z-50">
                     <Image
                       src={item.mainImagePath}
                       alt="item image representation"
-                      className="w-full h-auto max-h-64 sm:max-h-72 lg:max-h-96 rounded-lg shadow-lg object-cover"
+                      className="w-full h-auto max-h-64 sm:max-h-72 lg:max-h-96 rounded-lg shadow-lg object-cover z-[999]"
                       width={0}
                       height={0}
                     />

@@ -141,7 +141,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     <canvas
       ref={canvasRef}
       className={mergeStyle(
-        'h-full w-full absolute inset-0 pointer-events-none',
+        'h-full w-full absolute inset-0 z-10 pointer-events-none',
         className
       )}
     />

@@ -30,7 +30,7 @@ export default function Home() {
             />
           </div>
 
-          <Card className="border-none flex flex-col justify-start items-center text-center sm:order-none md:order-first">
+          <Card className="border-none flex flex-col justify-start items-center text-center sm:order-none md:order-first ">
             <CardHeader>
               <CardTitle>
                 <span className="text-2xl text-blue-700 ml-2">
