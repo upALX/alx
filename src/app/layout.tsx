@@ -1,5 +1,4 @@
-import type { Metadata } from 'next';
-import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeProvider } from 'next-themes';
 import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { mergeStyle } from '@/lib/utils';
@@ -7,13 +6,14 @@ import { ModeToggle } from '@/components/change-mode';
 import { NavigationMenuALX } from '@/components/patterns/menu-pattern';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import Link from 'next/link';
+import { ThemeEffect } from '@/components/patterns/theme-effect-pattern';
 
 const mainFont = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'ALX inc.',
   description: 'Created by ALX Inc.',
 };
@@ -68,6 +68,7 @@ export default function RootLayout({
               />
             </div>
           </footer>
+          <ThemeEffect />
         </ThemeProvider>
       </body>
     </html>
