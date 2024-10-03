@@ -9,22 +9,22 @@ import { Label } from '@/components/ui/label';
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
-  // Initialize client-side handling of theme to prevent React hydration issues
   const [isMounted, setIsMounted] = React.useState(false);
   React.useEffect(() => {
-    setIsMounted(true); // Set mounted state to true once the component mounts
-  }, []);
+    setIsMounted(true);
 
-  // Determine if the current theme is dark
+    if (!theme) {
+      setTheme('dark');
+    }
+  }, [theme, setTheme]);
+
   const isDarkMode = theme === 'dark';
 
-  // Toggle theme function
   const toggleTheme = () => {
     const newTheme = isDarkMode ? 'light' : 'dark';
     setTheme(newTheme);
   };
 
-  // Prevent rendering until the component is mounted to avoid hydration issues
   if (!isMounted) {
     return null;
   }
