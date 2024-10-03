@@ -3,7 +3,6 @@
 import * as React from 'react';
 import { useTheme } from 'next-themes';
 import { SunDim, MoonStar } from 'lucide-react';
-
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 
@@ -16,15 +15,18 @@ export function ModeToggle() {
     setIsMounted(true); // Set mounted state to true once the component mounts
   }, []);
 
+  // Determine if the current theme is dark
   const isDarkMode = theme === 'dark';
 
+  // Toggle theme function
   const toggleTheme = () => {
     const newTheme = isDarkMode ? 'light' : 'dark';
     setTheme(newTheme);
   };
 
+  // Prevent rendering until the component is mounted to avoid hydration issues
   if (!isMounted) {
-    return null; // Prevent rendering until the component is mounted
+    return null;
   }
 
   return (

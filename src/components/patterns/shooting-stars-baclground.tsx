@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { mergeStyle } from "@/lib/utils";
-import React, { useEffect, useState, useRef } from "react";
+import { mergeStyle } from '@/lib/utils';
+import React, { useEffect, useState, useRef } from 'react';
 
 interface ShootingStar {
   id: number;
@@ -48,8 +48,8 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
   maxSpeed = 30,
   minDelay = 1200,
   maxDelay = 4200,
-  starColor = "#9E00FF",
-  trailColor = "#2EB9DF",
+  starColor = '#9E00FF',
+  trailColor = '#2EB9DF',
   starWidth = 10,
   starHeight = 1,
   className,
@@ -83,7 +83,7 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
   useEffect(() => {
     const moveStar = () => {
       if (star) {
-        setStar((prevStar) => {
+        setStar(prevStar => {
           if (!prevStar) return null;
           const newX =
             prevStar.x +
@@ -121,7 +121,10 @@ export const ShootingStars: React.FC<ShootingStarsProps> = ({
   return (
     <svg
       ref={svgRef}
-      className={mergeStyle("w-full h-full absolute inset-0", className)}
+      className={mergeStyle(
+        'w-full h-full absolute inset-0 pointer-events-none',
+        className
+      )}
     >
       {star && (
         <rect
