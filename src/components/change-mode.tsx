@@ -8,21 +8,17 @@ import { Label } from '@/components/ui/label';
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = React.useState(false);
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
 
+  const [isMounted, setIsMounted] = React.useState(false);
   React.useEffect(() => {
     setIsMounted(true);
+  }, []);
 
-    if (theme) {
-      setIsDarkMode(theme === 'dark');
-    }
-  }, [theme]);
+  const isDarkMode = theme === 'dark';
 
   const toggleTheme = () => {
     const newTheme = isDarkMode ? 'light' : 'dark';
     setTheme(newTheme);
-    setIsDarkMode(!isDarkMode);
   };
 
   if (!isMounted) {
