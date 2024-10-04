@@ -14,8 +14,6 @@ import { Code, Github, Rocket } from 'lucide-react';
 import { GithubDataTypes } from '@/app/types/about-types';
 
 export default function AboutPage() {
-  // TODO bater no github e pegar dados
-
   const router = useRouter();
 
   const fetchUserRepos = async (username: string, apiKey: string) => {

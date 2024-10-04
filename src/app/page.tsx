@@ -38,7 +38,6 @@ export default function Home() {
                     words={[
                       'What i cannot create, i do not understand.',
                       'Imagination is more important than knowledge.',
-                      'If you cant explain it simply, you dont understand it well enough.',
                     ]}
                     type="phrases"
                   />

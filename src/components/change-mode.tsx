@@ -12,11 +12,7 @@ export function ModeToggle() {
   const [isMounted, setIsMounted] = React.useState(false);
   React.useEffect(() => {
     setIsMounted(true);
-
-    if (!theme) {
-      setTheme('dark');
-    }
-  }, [theme, setTheme]);
+  }, []);
 
   const isDarkMode = theme === 'dark';
 
