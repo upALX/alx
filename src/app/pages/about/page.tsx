@@ -68,7 +68,7 @@ export default function AboutPage() {
       <Rocket className="animate-bounce" />
     </div>
   ) : (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 items-start justify-start gap-4">
+    <div className="grid sm:grid-cols-1 lg:grid-cols-2 items-start justify-start gap-4">
       <div className="flex flex-col gap-4 relative p-4">
         <div className="flex justify-center">
           <TypographyPattern text="Timeline" type="h2" />
@@ -76,8 +76,8 @@ export default function AboutPage() {
         {cards_timeline.map((card, index) => (
           <div
             key={index}
-            className={`relative flex flex-col ${
-              index % 2 === 0 ? 'items-center' : 'items-end'
+            className={`relative flex flex-col px-12 ${
+              index % 2 === 0 ? 'items-start' : 'items-end'
             } `}
           >
             <div className="animate-float w-full sm:max-w-max dark:hover:z-20 ">
