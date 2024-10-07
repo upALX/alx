@@ -74,7 +74,7 @@ export default function AboutPage() {
           <TypographyPattern text="Timeline" type="h2" />
           <Separator className="w-2/3" />
         </div>
-        <div className="flex flex-col mt-10 justify-between h-full gap-4">
+        <div className="flex flex-col justify-between h-full gap-4 mt-10">
           {cards_timeline.map((card, index) => (
             <div
               key={index}
