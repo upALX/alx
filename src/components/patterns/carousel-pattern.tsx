@@ -24,15 +24,15 @@ import Image from 'next/image';
 
 export default function CarouselPattern(props: CarouselPatternProps) {
   const plugin = React.useRef(
-    Autoplay({ delay: 7000, stopOnInteraction: false })
+    Autoplay({ delay: 4000, stopOnInteraction: false })
   );
 
   return (
     <Carousel
       plugins={[plugin.current]}
       className="w-full sm:w-9/12 lg:w-8/12 mx-auto"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
+      onMouseEnter={() => plugin.current.stop()}
+      onMouseLeave={() => plugin.current.play()}
     >
       <CarouselContent>
         {props.items.map((item, index) => (
