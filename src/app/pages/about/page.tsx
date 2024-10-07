@@ -78,7 +78,7 @@ export default function AboutPage() {
           {cards_timeline.map((card, index) => (
             <div
               key={index}
-              className={`relative flex flex-col px-20 ${
+              className={`relative flex flex-col md:px-20 ${
                 index % 2 === 0 ? 'items-start' : 'items-end'
               } `}
             >
@@ -122,17 +122,17 @@ export default function AboutPage() {
                 priority
               />
             </div>
-          </div>
-
-          <div className="flex justify-center w-full">
-            <Button
-              onClick={() => {
-                router.push(SOCIAL_LINKS.GITHUB);
-              }}
-              variant={'link'}
-            >
-              All data was collected from my Github, click to see more.
-            </Button>
+            <div className="flex justify-center w-full my-4">
+              <Button
+                onClick={() => {
+                  router.push(SOCIAL_LINKS.GITHUB);
+                }}
+                variant={'link'}
+                className="text-wrap"
+              >
+                All data was collected from my Github, click to see more.
+              </Button>
+            </div>
           </div>
         </div>
 
