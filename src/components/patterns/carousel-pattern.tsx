@@ -38,22 +38,25 @@ export default function CarouselPattern(props: CarouselPatternProps) {
         {props.items.map((item, index) => (
           <CarouselItem key={index}>
             <div className="p-2 sm:p-4">
-              <Card className="transition-all duration-300 transform hover:scale-104 hover:shadow-lg hover:border-slate-900 text-slate-900 bg-slate-100 dark:bg-slate-950 dark:hover:border-blue-400 dark:text-gray-300 hover:z-20">
+              <Card className="flex flex-col md:h-[500px] overflow-hidden transition-all duration-300 transform hover:scale-104 hover:shadow-lg hover:border-slate-900 text-slate-900 bg-slate-100 dark:bg-slate-950 dark:hover:border-blue-400 dark:text-gray-300 hover:z-20">
                 <CardHeader className="flex justify-center items-center">
                   <CardTitle className="text-xl">{item.title}</CardTitle>
-                  <CardDescription>{item.text}</CardDescription>
+                  <CardDescription className="text-center">
+                    {item.text}
+                  </CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col items-center justify-center w-full space-y-4 z-20">
-                  <div className="p-4 z-50">
+                <CardContent className="flex flex-col sm:justify-between items-center flex-grow z-20">
+                  <div className="relative w-full h-auto max-h-64 sm:max-h-72 lg:max-h-80">
                     <Image
                       src={item.mainImagePath}
                       alt="item image representation"
-                      className="w-full h-auto max-h-64 sm:max-h-72 lg:max-h-96 rounded-lg shadow-lg object-cover z-[999]"
-                      width={0}
-                      height={0}
+                      className="w-full h-full object-contain"
+                      width={200}
+                      height={200}
                     />
                   </div>
-                  <div className="presentation__buttons-link flex space-x-4">
+
+                  <div className="presentation__buttons-link flex space-x-4 mt-5">
                     <Link href={item.githubPath} target="_blank">
                       <Button className="rounded-full">
                         <CodeXml className="w-4 h-4 hover:animate-spin" />
