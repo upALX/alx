@@ -68,113 +68,125 @@ export default function AboutPage() {
       <Rocket className="animate-bounce" />
     </div>
   ) : (
-    <div className="grid sm:grid-cols-1 lg:grid-cols-2 items-start justify-start gap-4">
-      <div className="flex flex-col gap-4 relative p-4">
-        <div className="flex justify-center">
+    <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="flex flex-col justify-between gap-4 p-4 h-full">
+        <div className="flex flex-col items-center">
           <TypographyPattern text="Timeline" type="h2" />
+          <Separator className="w-2/3" />
         </div>
-        {cards_timeline.map((card, index) => (
-          <div
-            key={index}
-            className={`relative flex flex-col px-12 ${
-              index % 2 === 0 ? 'items-start' : 'items-end'
-            } `}
-          >
-            <div className="animate-float w-full sm:max-w-max dark:hover:z-20 ">
-              <CardExperiencePattern
-                title={card.title}
-                description={card.description}
-                badge_description={card.badge_description}
-                text_content={card.text_content}
-                type_experience={card.type_experience}
-                see_more_link={card.see_more_link}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-col justify-evenly gap-4 flex-grow h-full">
-        <div className="flex flex-col w-full items-center justify-center gap-4">
-          <div className="flex justify-center w-full sm:mt-4">
-            <TypographyPattern type="h2" text={'Numbers'} />
-          </div>
-          <div className="flex w-2/3">
-            <Image
-              alt="Stats"
-              src={
-                'https://stats-github-app.vercel.app?user=upalx&theme=python-dark'
-              }
-              layout="responsive"
-              width={250}
-              height={100}
-              unoptimized
-              priority
-            />
-          </div>
-          <div className="flex justify-center">
-            <Button
-              onClick={() => {
-                router.push(SOCIAL_LINKS.GITHUB);
-              }}
-              variant={'link'}
+        <div className="flex flex-col justify-between h-full gap-4 mt-10">
+          {cards_timeline.map((card, index) => (
+            <div
+              key={index}
+              className={`relative flex flex-col md:px-20 ${
+                index % 2 === 0 ? 'items-start' : 'items-end'
+              } `}
             >
-              All data was collected from my Github, click to see more.
-            </Button>
-          </div>
+              <div className="animate-float w-full sm:max-w-max dark:hover:z-20">
+                <CardExperiencePattern
+                  title={card.title}
+                  description={card.description}
+                  badge_description={card.badge_description}
+                  text_content={card.text_content}
+                  type_experience={card.type_experience}
+                  see_more_link={card.see_more_link}
+                />
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
 
-        <div className="flex justify-center">
+      <div className="flex flex-col justify-between items-center gap-4 p-4 h-full">
+        <div className="flex flex-col w-full items-center">
+          <TypographyPattern type="h2" text={'About'} />
           <Separator className="w-2/3" />
         </div>
 
-        <div className="w-full">
+        <div className="flex flex-col items-center  w-full gap-4">
+          <div className="flex flex-col items-center w-2/3 gap-4">
+            <div className="flex justify-center w-full">
+              <TypographyPattern type="h2" text={'Numbers'} />
+            </div>
+
+            <div className="flex justify-center">
+              <Image
+                alt="Stats"
+                src={
+                  'https://stats-github-app.vercel.app?user=upalx&theme=python-dark'
+                }
+                layout="responsive"
+                width={250}
+                height={100}
+                unoptimized
+                priority
+              />
+            </div>
+            <div className="flex justify-center w-full my-4">
+              <Button
+                onClick={() => {
+                  router.push(SOCIAL_LINKS.GITHUB);
+                }}
+                variant={'link'}
+                className="text-wrap"
+              >
+                All data was collected from my Github, click to see more.
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center w-full">
+          <Separator className="w-2/3" />
+        </div>
+
+        <div className="w-full flex flex-col items-center">
           <div className="flex justify-center w-full">
             <TypographyPattern type="h2" text={'FAQ'} />
           </div>
-          <div className="flex items-center justify-center">
+
+          <div className="flex justify-center w-full">
             <AccordionALX />
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center w-full">
           <Separator className="w-2/3" />
         </div>
 
-        <div className="w-full">
+        <div className="w-full flex flex-col items-center">
           <div className="flex justify-center w-full mb-4">
             <TypographyPattern type="h2" text={'Socials'} />
           </div>
 
-          <div className="flex justify-center">
-            <div className="flex flex-col items-center lg:flex-row lg:justify-center break-words">
-              <a
-                href="https://www.hackerrank.com/profile/alxinc"
-                className="group rounded-lg border  border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
-                target="_blank"
-              >
-                <h2 className="mb-3 text-2xl font-semibold">
-                  Hacker Rank{' '}
-                  <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                    <Code />
-                  </span>
-                </h2>
-                <p className="text-sm">See more...</p>
-              </a>
+          <div className="flex flex-col items-center lg:flex-row lg:justify-center gap-4 break-words">
+            <a
+              href="https://www.hackerrank.com/profile/alxinc"
+              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
+              target="_blank"
+            >
+              <h2 className="mb-3 text-2xl font-semibold">
+                Hacker Rank{' '}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  <Code />
+                </span>
+              </h2>
+              <p className="text-sm">See more...</p>
+            </a>
 
-              <a
-                href="https://github.com/upalx"
-                className="group rounded-lg  border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-                target="_blank"
-              >
-                <h2 className="mb-3 text-2xl font-semibold animation-wave">
-                  Github{' '}
-                  <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                    <Github />
-                  </span>
-                </h2>
-                <p className="text-sm">See more...</p>
-              </a>
-            </div>
+            <a
+              href="https://github.com/upalx"
+              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+              target="_blank"
+            >
+              <h2 className="mb-3 text-2xl font-semibold animation-wave">
+                Github{' '}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  <Github />
+                </span>
+              </h2>
+              <p className="text-sm">See more...</p>
+            </a>
           </div>
         </div>
       </div>

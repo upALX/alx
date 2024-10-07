@@ -49,7 +49,7 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main className="flex-grow flex flex-col w-full">{children}</main>
+          <main className="flex flex-col w-full">{children}</main>
 
           <footer className="w-full my-4 p-2">
             <div className="flex justify-center items-center">
