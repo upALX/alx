@@ -45,7 +45,7 @@ export default function CarouselPattern(props: CarouselPatternProps) {
                     {item.text}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col sm:justify-between items-center flex-grow z-20">
+                <CardContent className="flex flex-col sm:justify-between items-center flex-grow">
                   <div className="relative w-full h-auto max-h-64 sm:max-h-72 lg:max-h-80">
                     <Image
                       src={item.mainImagePath}
