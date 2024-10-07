@@ -1,10 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      'avatars.githubusercontent.com',
-      'github-stats-readme-langs.vercel.app',
-      'stats-github-app.vercel.app',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github-stats-readme-langs.vercel.app',
+      },
+      {
+        protocol: 'https',
+        hostname: 'stats-github-app.vercel.app',
+      },
     ],
   },
   async rewrites() {
