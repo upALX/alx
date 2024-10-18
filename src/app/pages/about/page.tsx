@@ -113,7 +113,7 @@ export default function AboutPage() {
               <Image
                 alt="Activity graph"
                 src={
-                  'https://github-readme-activity-graph.vercel.app/graph?username=upalx&radius=8&bg_color=000000&color=e0da22&area_color=7495f2&line=3265f0&point=false&area=true&custom_title=ALX - Activity flow&hide_border=false&grid=false'
+                  'https://github-readme-activity-graph.vercel.app/graph?username=upalx&radius=8&bg_color=000000&color=7495f2&area_color=e0da22&line=e0da22&point=false&area=true&custom_title=ALX - Activity flow&hide_border=false&grid=false'
                 }
                 layout="responsive"
                 width={200}
