@@ -109,9 +109,20 @@ export default function AboutPage() {
               <TypographyPattern type="h2" text={'Numbers'} />
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex flex-col gap-4 justify-center">
               <Image
-                alt="Stats"
+                alt="Activity graph"
+                src={
+                  'https://github-readme-activity-graph.vercel.app/graph?username=upalx&radius=8&bg_color=000000&color=e0da22&area_color=7495f2&line=3265f0&point=false&area=true&custom_title=ALX - Activity flow&hide_border=false&grid=false'
+                }
+                layout="responsive"
+                width={200}
+                height={200}
+                unoptimized
+                priority
+              />
+              <Image
+                alt="Stats numbers"
                 src={
                   'https://stats-github-app.vercel.app?user=upalx&theme=python-dark'
                 }
