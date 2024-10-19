@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { TypographyPattern } from './typography-pattern';
 
 interface CustomImageProps {
   src: string;
@@ -37,14 +38,19 @@ export function ImagePattern({
   return (
     <div style={{ position: 'relative' }}>
       {isExternal && isLoading && (
-        <Image
-          src={fallbackSrc}
-          alt="Image fallback"
-          layout="responsive"
-          width={500}
-          height={500}
-          objectFit="cover"
-        />
+        <div className="flex flex-col items-center">
+          <Image
+            src={fallbackSrc}
+            alt="Image fallback"
+            width={100}
+            height={100}
+            objectFit="contain"
+          />
+          <TypographyPattern
+            type="muted"
+            text="Waiting fotons to compose the image..."
+          />
+        </div>
       )}
 
       {!isLoading && (
