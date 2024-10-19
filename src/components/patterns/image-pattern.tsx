@@ -1,27 +1,68 @@
-import { PropsImagePattern } from '@/components/types/image-pattern-types';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { TypographyPattern } from './typography-pattern';
-import { mergeStyle } from '../../lib/utils';
 
-export function ImagePatternALX(props: PropsImagePattern) {
-  const imageSourceApplication = props.imageURL;
+interface CustomImageProps {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  needsCompleteLoad?: boolean;
+  fallbackSrc?: string;
+}
+
+export function ImagePattern({
+  src,
+  alt,
+  width,
+  height,
+  needsCompleteLoad = false,
+  fallbackSrc = '/image-fallback.svg',
+}: CustomImageProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  const isExternal = src.startsWith('http');
+
+  useEffect(() => {
+    if (isExternal) {
+      const img = new window.Image();
+      img.src = src;
+
+      img.onload = () => {
+        setIsLoading(false);
+      };
+    } else {
+      setIsLoading(false);
+    }
+  }, [src, isExternal]);
+
   return (
-    <div className={`image-container ${props.rounded ? 'rounded-lg' : ''}`}>
-      <Image
-        src={props.imageURL ? props.imageURL : '/image-fallback.svg'}
-        alt={props.imageDescription}
-        width={500}
-        height={100}
-        style={{ objectFit: 'cover' }}
-        className={`${props.rounded ? 'rounded-lg' : ''} object-cover dark:brightness-[0.7] dark:grayscale ${mergeStyle(
-          props.className
-        )}`}
-        priority
-      />
-      {!props.imageURL && (
-        <div className="flex text-center items-end">
-          <TypographyPattern type="muted" text={'Imagem não informada'} />
+    <div style={{ position: 'relative' }}>
+      {isExternal && isLoading && (
+        <div className="flex flex-col items-center">
+          <Image
+            src={fallbackSrc}
+            alt="Image fallback"
+            width={100}
+            height={100}
+            objectFit="contain"
+          />
+          <TypographyPattern
+            type="muted"
+            text="Waiting fotons to compose the image..."
+          />
         </div>
+      )}
+
+      {!isLoading && (
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          layout="responsive"
+          unoptimized={isExternal}
+          priority={needsCompleteLoad}
+        />
       )}
     </div>
   );
