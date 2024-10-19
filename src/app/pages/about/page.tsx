@@ -12,9 +12,12 @@ import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../../../constants';
 import { Code, Github, Rocket } from 'lucide-react';
 import { GithubDataTypes } from '@/app/types/about-types';
+import { ImagePattern } from '@/components/patterns/image-pattern';
 
 export default function AboutPage() {
   const router = useRouter();
+  const [isLoadingGraph, setIsLoadingGraph] = useState(true);
+  const [isLoadingStats, setIsLoadingStats] = useState(true);
 
   const fetchUserRepos = async (username: string, apiKey: string) => {
     const response = await fetch(`https://api.github.com/users/${username}`, {
@@ -110,27 +113,19 @@ export default function AboutPage() {
             </div>
 
             <div className="flex flex-col gap-4 justify-center">
-              <Image
-                alt="Activity graph"
-                src={
-                  'https://github-readme-activity-graph.vercel.app/graph?username=upalx&radius=8&bg_color=000000&color=7495f2&area_color=e0da22&line=e0da22&point=false&area=true&custom_title=ALX - Activity flow&hide_border=false&grid=false'
-                }
-                layout="responsive"
+              <ImagePattern
+                src="https://stats-github-app.vercel.app?user=upalx&theme=python-dark"
+                alt="Stats numbers"
                 width={200}
                 height={200}
-                unoptimized
-                priority
+                needsCompleteLoad={true}
               />
-              <Image
-                alt="Stats numbers"
-                src={
-                  'https://stats-github-app.vercel.app?user=upalx&theme=python-dark'
-                }
-                layout="responsive"
-                width={250}
-                height={100}
-                unoptimized
-                priority
+              <ImagePattern
+                src="https://github-readme-activity-graph.vercel.app/graph?username=upalx&radius=8&bg_color=000000&color=7495f2&area_color=e0da22&line=e0da22&point=false&area=true&custom_title=ALX - Activity  flow (D-30)&hide_border=false&grid=false&days=30"
+                alt="Activity graph"
+                width={200}
+                height={200}
+                needsCompleteLoad={true}
               />
             </div>
             <div className="flex justify-center w-full my-4">

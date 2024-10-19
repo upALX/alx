@@ -1,9 +1,7 @@
-export type PropsImagePattern = {
-  imageURL?: string;
-  needsCard: boolean;
-  title?: string;
-  description?: string;
-  imageDescription: string;
-  rounded: boolean;
-  className?: string;
-};
+interface ImagePropsTypes {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  needsCompleteLoad?: boolean;
+}
