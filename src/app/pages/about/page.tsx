@@ -128,7 +128,7 @@ export default function AboutPage() {
                 needsCompleteLoad={true}
               />
             </div>
-            <div className="flex justify-center w-full my-4">
+            <div className="flex justify-center w-full mb-4">
               <Button
                 onClick={() => {
                   router.push(SOCIAL_LINKS.GITHUB);
