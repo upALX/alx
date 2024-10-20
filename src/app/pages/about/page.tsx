@@ -1,6 +1,6 @@
 'use client';
 
-import { AccordionALX } from '@/components/patterns/accourdion-pattern';
+import { FAQALX } from '@/components/patterns/faq-pattern';
 import { cards_timeline } from '@/app/mapper/cards-timeline.json';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -152,7 +152,7 @@ export default function AboutPage() {
           </div>
 
           <div className="flex justify-center w-full">
-            <AccordionALX />
+            <FAQALX />
           </div>
         </div>
 

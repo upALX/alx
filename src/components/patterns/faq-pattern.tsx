@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-export function AccordionALX() {
+export function FAQALX() {
   return (
     <Accordion type="single" collapsible className="w-2/3">
       <AccordionItem value="item-1">
