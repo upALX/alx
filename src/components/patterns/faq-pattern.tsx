@@ -55,9 +55,9 @@ export function FAQALX() {
           MOBA (League of Legends), as well as consoles (Playstation).
           Furthermore, I really like areas such as economics (macro) and physics
           (cosmology and astrophysics). I like and practice sports such as
-          bodybuilding, running and football. I really like podcasts and I'm a
-          music lover, especially genres like Rock, Trap, MPB, Electro House,
-          which is why my headphones are my second home.
+          bodybuilding, running and football. I really like podcasts and
+          I&apos;m a music lover, especially genres like Rock, Trap, MPB,
+          Electro House, which is why my headphones are my second home.
         </AccordionContent>
       </AccordionItem>
     </Accordion>
