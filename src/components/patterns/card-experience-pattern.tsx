@@ -7,7 +7,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BriefcaseBusiness, GraduationCap } from 'lucide-react';
+import { FaBusinessTime } from 'react-icons/fa';
+import { LiaGraduationCapSolid } from 'react-icons/lia';
 import { Button } from '../ui/button';
 import { PropsCardExperiencePattern } from '@/components/types/card-experience-pattern-types';
 import Link from 'next/link';
@@ -26,9 +27,9 @@ export function CardExperiencePattern(props: PropsCardExperiencePattern) {
           </span>
           <span>
             {props.type_experience === 'study' ? (
-              <GraduationCap />
+              <LiaGraduationCapSolid className="w-6 h-6" />
             ) : (
-              <BriefcaseBusiness />
+              <FaBusinessTime className="w-6 h-6" />
             )}
           </span>
         </div>

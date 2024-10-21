@@ -2,7 +2,8 @@
 
 import * as React from 'react';
 import { useTheme } from 'next-themes';
-import { SunDim, MoonStar } from 'lucide-react';
+import { RxMoon } from 'react-icons/rx';
+import { GiSun } from 'react-icons/gi';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 
@@ -33,7 +34,11 @@ export function ModeToggle() {
         onCheckedChange={toggleTheme}
       />
       <Label htmlFor="theme-changer">
-        {isDarkMode ? <MoonStar /> : <SunDim />}
+        {isDarkMode ? (
+          <RxMoon className="w-6 h-6" />
+        ) : (
+          <GiSun className="w-6 h-6" />
+        )}
       </Label>
     </div>
   );

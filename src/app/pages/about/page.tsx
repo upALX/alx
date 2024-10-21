@@ -1,8 +1,7 @@
 'use client';
 
-import { AccordionALX } from '@/components/patterns/accourdion-pattern';
+import { FAQALX } from '@/components/patterns/faq-pattern';
 import { cards_timeline } from '@/app/mapper/cards-timeline.json';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
@@ -10,14 +9,17 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../../../constants';
-import { Code, Github, Rocket } from 'lucide-react';
+import { BsRocketTakeoff } from 'react-icons/bs';
 import { GithubDataTypes } from '@/app/types/about-types';
 import { ImagePattern } from '@/components/patterns/image-pattern';
+import { LiaHackerrank } from 'react-icons/lia';
+import { DiGithubAlt } from 'react-icons/di';
+import { links_information } from '@/app/mapper';
+import BeutifyLinkPattern from '@/components/patterns/beautify-link-pattern';
+import BeautifyLinkPattern from '@/components/patterns/beautify-link-pattern';
 
 export default function AboutPage() {
   const router = useRouter();
-  const [isLoadingGraph, setIsLoadingGraph] = useState(true);
-  const [isLoadingStats, setIsLoadingStats] = useState(true);
 
   const fetchUserRepos = async (username: string, apiKey: string) => {
     const response = await fetch(`https://api.github.com/users/${username}`, {
@@ -60,15 +62,13 @@ export default function AboutPage() {
     fetchData();
   }, [githubAPIKey]);
 
-  console.log(githubData);
-
   const PUBLIC_REPOS =
     (githubData?.public_repos || 0) + (githubData?.total_private_repos || 0);
   console.log(PUBLIC_REPOS);
 
   return loading ? (
     <div className="flex justify-center items-center h-screen">
-      <Rocket className="animate-bounce" />
+      <BsRocketTakeoff className="animate-bounce" />
     </div>
   ) : (
     <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
@@ -152,7 +152,7 @@ export default function AboutPage() {
           </div>
 
           <div className="flex justify-center w-full">
-            <AccordionALX />
+            <FAQALX />
           </div>
         </div>
 
@@ -165,34 +165,10 @@ export default function AboutPage() {
             <TypographyPattern type="h2" text={'Socials'} />
           </div>
 
-          <div className="flex flex-col items-center lg:flex-row lg:justify-center gap-4 break-words">
-            <a
-              href="https://www.hackerrank.com/profile/alxinc"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 mb-4 lg:mb-0"
-              target="_blank"
-            >
-              <h2 className="mb-3 text-2xl font-semibold">
-                Hacker Rank{' '}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  <Code />
-                </span>
-              </h2>
-              <p className="text-sm">See more...</p>
-            </a>
-
-            <a
-              href="https://github.com/upalx"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-              target="_blank"
-            >
-              <h2 className="mb-3 text-2xl font-semibold animation-wave">
-                Github{' '}
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  <Github />
-                </span>
-              </h2>
-              <p className="text-sm">See more...</p>
-            </a>
+          <div className="grid grid-cols-2 items-center lg:flex-row lg:justify-center gap-4 break-words">
+            <BeautifyLinkPattern
+              linkInformationList={links_information.links_information}
+            />
           </div>
         </div>
       </div>

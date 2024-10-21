@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { Metadata } from 'next';
-// import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../constants';
 import Link from 'next/link';
 import { HeroHighlightPattern } from '@/components/patterns/text-color-pattern';
