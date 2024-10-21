@@ -15,7 +15,8 @@ import { ImagePattern } from '@/components/patterns/image-pattern';
 import { LiaHackerrank } from 'react-icons/lia';
 import { DiGithubAlt } from 'react-icons/di';
 import { links_information } from '@/app/mapper';
-import BeutifyLinkPattern from '@/components/patterns/beutify-link-pattern';
+import BeutifyLinkPattern from '@/components/patterns/beautify-link-pattern';
+import BeautifyLinkPattern from '@/components/patterns/beautify-link-pattern';
 
 export default function AboutPage() {
   const router = useRouter();
@@ -165,8 +166,8 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-2 items-center lg:flex-row lg:justify-center gap-4 break-words">
-            <BeutifyLinkPattern
-              linkInformationsList={links_information.links_information}
+            <BeautifyLinkPattern
+              linkInformationList={links_information.links_information}
             />
           </div>
         </div>

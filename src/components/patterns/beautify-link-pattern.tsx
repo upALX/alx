@@ -1,11 +1,11 @@
-import { BeutifyLinkPropType } from '@/components/types/beutify-link-types';
+import { BeautifyLinkPropType } from '@/components/types/beautify-link-types';
 import Link from 'next/link';
 import { TypographyPattern } from './typography-pattern';
 import { TbError404 } from 'react-icons/tb';
 import { IconEnum, IconMap } from '../../../constants';
 
-export default function BeutifyLinkPattern(props: BeutifyLinkPropType) {
-  const linkComponents = props.linkInformationsList.map(
+export default function BeautifyLinkPattern(props: BeautifyLinkPropType) {
+  const linkComponents = props.linkInformationList.map(
     ({ link, title, icon, description }, index) => {
       const IconComponent = IconMap[icon as IconEnum] || TbError404;
 

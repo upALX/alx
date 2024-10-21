@@ -1,5 +1,5 @@
-export type BeutifyLinkPropType = {
-  linkInformationsList: {
+export type BeautifyLinkPropType = {
+  linkInformationList: {
     link: string;
     title: string;
     icon: string;
