@@ -41,7 +41,7 @@ export function ImagePattern({
           <FcIdea className="animate-pulse w-6 h-8" />
           <TypographyPattern
             type="small"
-            text="Waiting photons to compose the image..."
+            text="Keep calm and relax: we're waiting for the photons to turn into pixels to do this..."
           />
         </div>
       )}

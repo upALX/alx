@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaGithub, FaHackerrank } from 'react-icons/fa'; // Importando os ícones que você deseja usar
 import { TbBrandNotion } from 'react-icons/tb';
+import { SlSocialLinkedin } from 'react-icons/sl';
 
 export enum WEBSITE_ROUTES {
   HOME_PAGE = '/',
@@ -22,10 +23,12 @@ export enum IconEnum {
   github = 'github',
   hacker_rank = 'hacker_rank',
   notion = 'notion',
+  linkedin = 'linkedin',
 }
 
 export const IconMap: Record<IconEnum, React.ElementType> = {
   [IconEnum.github]: FaGithub,
   [IconEnum.hacker_rank]: FaHackerrank,
   [IconEnum.notion]: TbBrandNotion,
+  [IconEnum.linkedin]: SlSocialLinkedin,
 };

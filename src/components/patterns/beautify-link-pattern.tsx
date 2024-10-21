@@ -14,15 +14,15 @@ export default function BeautifyLinkPattern(props: BeautifyLinkPropType) {
           href={link}
           key={index}
           target="_blank"
-          className="flex flex-col items-center text-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          className="flex flex-col items-center justify-start text-center group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
         >
-          <div className="flex items-center justify-center">
+          <div className="flex items-start justify-center">
             <TypographyPattern type="h2" text={title} />
             <span className="inline-block ml-2 transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               <IconComponent className="w-6 h-6" />
             </span>
           </div>
-          <div className="max-w-[150px]">
+          <div className="max-w-[150px] h-12 overflow-hidden">
             <TypographyPattern type="muted" text={description} />
           </div>
         </Link>

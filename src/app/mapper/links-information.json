@@ -14,9 +14,15 @@
     },
     {
       "title": "Notes & Study",
-      "description": "This is a hub with all my private (now public) notes from work and studies at now.",
+      "description": "My personal notes from work and study.",
       "link": "https://upalx.notion.site/c7e34b9d671a4cc385f28e1d605dda30?v=6901a704b82d404c86ca7c3253341547&pvs=4",
       "icon": "notion"
+    },
+    {
+      "title": "LinkedIn",
+      "description": "Just linkedIn.",
+      "link": "https://linkedin.com/in/alxinc",
+      "icon": "linkedin"
     }
   ]
 }
