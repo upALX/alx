@@ -165,7 +165,7 @@ export default function AboutPage() {
             <TypographyPattern type="h2" text={'Socials'} />
           </div>
 
-          <div className="grid grid-cols-2 items-center lg:flex-row lg:justify-center gap-4 break-words">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 items-center lg:flex-row lg:justify-center gap-4 break-words">
             <BeautifyLinkPattern
               linkInformationList={links_information.links_information}
             />
