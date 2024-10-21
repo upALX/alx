@@ -2,7 +2,7 @@
 
 import { HeroHighlightPattern } from '@/components/patterns/text-color-pattern';
 import { Button } from '@/components/ui/button';
-import { Rocket } from 'lucide-react';
+import { BsRocketTakeoff } from 'react-icons/bs';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -33,7 +33,7 @@ export default function NotFoundPage() {
           className="p-4 overflow-hidden"
         >
           <div className="flex justify-center items-center">
-            <Rocket className="animate-bounce" />
+            <BsRocketTakeoff className="animate-bounce" />
           </div>
         </Button>
       </main>

@@ -4,10 +4,12 @@ import * as React from 'react';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 import { mergeStyle } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+
+import { PiArrowBendDownRightThin } from 'react-icons/pi';
+import { PiArrowBendDownLeftThin } from 'react-icons/pi';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
@@ -87,10 +89,10 @@ const Carousel = React.forwardRef<
 
     const handleKeyDown = React.useCallback(
       (event: React.KeyboardEvent<HTMLDivElement>) => {
-        if (event.key === 'ArrowLeft') {
+        if (event.key === 'PiArrowBendDownLeftThin') {
           event.preventDefault();
           scrollPrev();
-        } else if (event.key === 'ArrowRight') {
+        } else if (event.key === 'PiArrowBendDownRightThin') {
           event.preventDefault();
           scrollNext();
         }
@@ -216,7 +218,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="h-4 w-4" />
+      <PiArrowBendDownLeftThin className="h-6 w-6" />
       <span className="sr-only">Previous slide</span>
     </Button>
   );
@@ -245,7 +247,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="h-4 w-4" />
+      <PiArrowBendDownRightThin className="h-6 w-6" />
       <span className="sr-only">Next slide</span>
     </Button>
   );

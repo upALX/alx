@@ -2,7 +2,6 @@
 
 import { FAQALX } from '@/components/patterns/faq-pattern';
 import { cards_timeline } from '@/app/mapper/cards-timeline.json';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
@@ -10,14 +9,14 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../../../constants';
-import { Code, Github, Rocket } from 'lucide-react';
+import { BsRocketTakeoff } from 'react-icons/bs';
 import { GithubDataTypes } from '@/app/types/about-types';
 import { ImagePattern } from '@/components/patterns/image-pattern';
+import { LiaHackerrank } from 'react-icons/lia';
+import { DiGithubAlt } from 'react-icons/di';
 
 export default function AboutPage() {
   const router = useRouter();
-  const [isLoadingGraph, setIsLoadingGraph] = useState(true);
-  const [isLoadingStats, setIsLoadingStats] = useState(true);
 
   const fetchUserRepos = async (username: string, apiKey: string) => {
     const response = await fetch(`https://api.github.com/users/${username}`, {
@@ -68,7 +67,7 @@ export default function AboutPage() {
 
   return loading ? (
     <div className="flex justify-center items-center h-screen">
-      <Rocket className="animate-bounce" />
+      <BsRocketTakeoff className="animate-bounce" />
     </div>
   ) : (
     <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
@@ -174,7 +173,7 @@ export default function AboutPage() {
               <h2 className="mb-3 text-2xl font-semibold">
                 Hacker Rank{' '}
                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  <Code />
+                  <LiaHackerrank className="animate-pulse" />
                 </span>
               </h2>
               <p className="text-sm">See more...</p>
@@ -188,7 +187,7 @@ export default function AboutPage() {
               <h2 className="mb-3 text-2xl font-semibold animation-wave">
                 Github{' '}
                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  <Github />
+                  <DiGithubAlt />
                 </span>
               </h2>
               <p className="text-sm">See more...</p>

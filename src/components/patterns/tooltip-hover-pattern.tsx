@@ -4,7 +4,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card';
-import { CircleHelp } from 'lucide-react';
+import { TfiHelpAlt } from 'react-icons/tfi';
 
 export type TooltipHoverCardProps = {
   text: string;
@@ -21,7 +21,7 @@ export const TooltipHoverCard = ({ text }: TooltipHoverCardProps) => {
     <HoverCard open={isOpen} onOpenChange={setIsOpen}>
       <HoverCardTrigger onClick={toggleTooltip}>
         <div>
-          <CircleHelp size={12} className="ml-1 cursor-pointer" />
+          <TfiHelpAlt size={12} className="ml-1 cursor-pointer" />
         </div>
       </HoverCardTrigger>
       <HoverCardContent>{text}</HoverCardContent>

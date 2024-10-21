@@ -17,7 +17,8 @@ import {
 import * as React from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { CarouselPatternProps } from '@/components/types/carousel-pattern-types';
-import { CodeXml, Video } from 'lucide-react';
+import { IoVideocam } from 'react-icons/io5';
+import { LiaFreeCodeCamp } from 'react-icons/lia';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -59,12 +60,12 @@ export default function CarouselPattern(props: CarouselPatternProps) {
                   <div className="presentation__buttons-link flex space-x-4 mt-5">
                     <Link href={item.githubPath} target="_blank">
                       <Button className="rounded-full">
-                        <CodeXml className="w-4 h-4 hover:animate-spin" />
+                        <LiaFreeCodeCamp className="w-6 h-6 animate-pulse" />
                       </Button>
                     </Link>
                     <Link href={item.videoPath} target="_blank">
                       <Button className="rounded" variant={'outline'}>
-                        <Video className="w-4 h-4 hover:animate-spin" />
+                        <IoVideocam className="w-5 h-5 hover:animate-spin" />
                       </Button>
                     </Link>
                   </div>
