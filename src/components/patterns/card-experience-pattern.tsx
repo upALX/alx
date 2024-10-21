@@ -27,9 +27,9 @@ export function CardExperiencePattern(props: PropsCardExperiencePattern) {
           </span>
           <span>
             {props.type_experience === 'study' ? (
-              <LiaGraduationCapSolid />
+              <LiaGraduationCapSolid className="w-6 h-6" />
             ) : (
-              <FaBusinessTime />
+              <FaBusinessTime className="w-6 h-6" />
             )}
           </span>
         </div>

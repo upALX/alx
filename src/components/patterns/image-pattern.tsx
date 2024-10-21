@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { TypographyPattern } from './typography-pattern';
+import { FcIdea } from 'react-icons/fc';
 
 interface CustomImageProps {
   src: string;
@@ -8,7 +9,6 @@ interface CustomImageProps {
   width: number;
   height: number;
   needsCompleteLoad?: boolean;
-  fallbackSrc?: string;
 }
 
 export function ImagePattern({
@@ -17,7 +17,6 @@ export function ImagePattern({
   width,
   height,
   needsCompleteLoad = false,
-  fallbackSrc = '/image-fallback.svg',
 }: CustomImageProps) {
   const [isLoading, setIsLoading] = useState(true);
   const isExternal = src.startsWith('http');
@@ -39,16 +38,10 @@ export function ImagePattern({
     <div style={{ position: 'relative' }}>
       {isExternal && isLoading && (
         <div className="flex flex-col items-center">
-          <Image
-            src={fallbackSrc}
-            alt="Image fallback"
-            width={100}
-            height={100}
-            objectFit="contain"
-          />
+          <FcIdea className="animate-pulse w-6 h-8" />
           <TypographyPattern
-            type="muted"
-            text="Waiting fotons to compose the image..."
+            type="small"
+            text="Waiting photons to compose the image..."
           />
         </div>
       )}
