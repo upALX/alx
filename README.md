@@ -20,6 +20,7 @@ Just code it.
 ![Tailwind](https://img.shields.io/badge/-Tailwind-05122A?style=flat&logo=tailwindcss)&nbsp;
 ![NextJS](https://img.shields.io/badge/-NextJS-05122A?style=flat&logo=Next.js)&nbsp;
 
+
 ## How to use 🫁
 
 **requirements:**
