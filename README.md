@@ -21,9 +21,7 @@ Just code it.
 ![Tailwind](https://img.shields.io/badge/-Tailwind-05122A?style=flat&logo=tailwindcss)&nbsp;
 ![NextJS](https://img.shields.io/badge/-NextJS-05122A?style=flat&logo=Next.js)&nbsp;
 
-
 ## How to use 🫁
-
 
 **requirements:**
   - Node >= 20
@@ -54,8 +52,6 @@ pnpm run dev
 
 This project is under the [MIT license](https://github.com/upALX/alx/blob/main/LICENSE).
 
-
 ---
-
 
 **Developed with 💜 by ME**
