@@ -24,6 +24,7 @@ Just code it.
 
 ## How to use 🫁
 
+
 **requirements:**
   - Node >= 20
   - Typescript@latest
