@@ -29,6 +29,7 @@ Just code it.
   - Node >= 20
   - Typescript@latest
 
+
 If you has a NODE >= 20 installed on your desktop and Typescript latest version, follow this:
 
 **1 - Clone this repo:**
