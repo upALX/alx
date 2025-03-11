@@ -42,6 +42,7 @@ If you has a NODE >= 20 installed on your desktop and Typescript latest version,
 ```
 git clone git@github.com:upALX/alx.git
 ```
+
 **2 - install all dependencies**
 ```
 pnpm i
