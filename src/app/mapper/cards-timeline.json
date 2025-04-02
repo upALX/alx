@@ -2,7 +2,7 @@
   "cards_timeline": [
     {
       "id": "d912b295-cfdd-4bfc-bdb0-992fc90cb832",
-      "title": "Banrisul - Full Stack ML Engineer",
+      "title": "Banrisul - Full Stack ML",
       "badge_description": "Current",
       "description": "Mid Level Engineer",
       "text_content": "Improving and developing routines, services and models for internal and external use.",
@@ -11,7 +11,7 @@
     },
     {
       "id": "b1f9d0c8-252a-44df-9e83-2cffddc2733a",
-      "title": "ROCK - Full Stack Engineer",
+      "title": "ROCK - Full Stack",
       "badge_description": "1 year",
       "description": "Mid Level Engineer",
       "text_content": "Creating and idealizing solutions for the real estate market.",
@@ -29,7 +29,7 @@
     },
     {
       "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
-      "title": "QI TECH - Full Stack Engineer",
+      "title": "QI TECH - Full Stack",
       "badge_description": "2 years",
       "description": "Junior to Mid level Engineer",
       "text_content": "Developed robust and scalable solutions for the Brazilian financial market.",
