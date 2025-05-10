@@ -12,6 +12,7 @@ import { LiaGraduationCapSolid } from 'react-icons/lia';
 import { Button } from '../ui/button';
 import { PropsCardExperiencePattern } from '@/components/types/card-experience-pattern-types';
 import Link from 'next/link';
+import { AnimatedModal } from '@/components/patterns/modal-pattern';
 
 export function CardExperiencePattern(props: PropsCardExperiencePattern) {
   return (
@@ -36,6 +37,7 @@ export function CardExperiencePattern(props: PropsCardExperiencePattern) {
       </CardHeader>
       <CardContent>{props.text_content}</CardContent>
       <CardFooter>
+      <AnimatedModal></AnimatedModal>
         <Button variant={'link'}>
           {' '}
           <Link href={props.see_more_link}> See more </Link>

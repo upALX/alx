@@ -17,6 +17,7 @@ import { DiGithubAlt } from 'react-icons/di';
 import { links_information } from '@/app/mapper';
 import BeutifyLinkPattern from '@/components/patterns/beautify-link-pattern';
 import BeautifyLinkPattern from '@/components/patterns/beautify-link-pattern';
+import { AnimatedModal } from '@/components/patterns/modal-pattern';
 
 export default function AboutPage() {
   const router = useRouter();
