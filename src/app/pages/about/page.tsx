@@ -109,7 +109,7 @@ export default function AboutPage() {
         <div className="flex flex-col items-center w-full gap-4">
         <div className="flex flex-col items-center w-full sm:w-11/12 md:w-4/6 lg:w-3/4 xl:w-2/3 gap-4">
             <div className="flex justify-center w-full">
-              <TypographyPattern type="h2" text={'Numbers'} />
+              <TypographyPattern type="h3" text={'Quick stats'} />
             </div>
 
             <div className="flex flex-col gap-4 justify-center">
@@ -148,10 +148,10 @@ export default function AboutPage() {
 
         <div className="w-full flex flex-col items-center">
           <div className="flex justify-center w-full">
-            <TypographyPattern type="h2" text={'FAQ'} />
+            <TypographyPattern type="h3" text={'FAQ'} />
           </div>
 
-          <div className="flex justify-center w-full">
+          <div className="flex justify-center w-full mt-4">
             <FAQALX />
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function AboutPage() {
 
         <div className="w-full flex flex-col items-center">
           <div className="flex justify-center w-full mb-4">
-            <TypographyPattern type="h2" text={'Socials'} />
+            <TypographyPattern type="h3" text={'Discover'} />
           </div>
 
           <div className="grid sm:grid-cols-1 md:grid-cols-2 items-center lg:flex-row lg:justify-center gap-4 break-words">

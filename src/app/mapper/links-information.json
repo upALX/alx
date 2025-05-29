@@ -2,19 +2,19 @@
   "links_information": [
     {
       "title": "Hacker Rank",
-      "description": "Practice of algorithms and data structures.",
+      "description": "Advanced practice.",
       "link": "https://www.hackerrank.com/profile/alxinc",
       "icon": "hacker_rank"
     },
     {
       "title": "Github",
-      "description": "All projects and my code (raw).",
+      "description": "Dev social.",
       "link": "https://github.com/upalx",
       "icon": "github"
     },
     {
-      "title": "Notes & Study",
-      "description": "My personal notes from work and study.",
+      "title": "Personal Notes",
+      "description": "Just study notes.",
       "link": "https://upalx.notion.site/c7e34b9d671a4cc385f28e1d605dda30?v=6901a704b82d404c86ca7c3253341547&pvs=4",
       "icon": "notion"
     },
