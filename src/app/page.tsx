@@ -20,7 +20,7 @@ export default function Home() {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center px-4">
           <div className="relative flex justify-center items-center">
             <Image
-              className="z-50 rounded-xl border-2 border-slate-950 dark:border-gray-400"
+              className="z-50 rounded-full border-2 border-slate-950 dark:border-gray-400"
               src="https://avatars.githubusercontent.com/u/59508016?v=4"
               alt="ALX Picture"
               width={450}
