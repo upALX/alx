@@ -106,8 +106,8 @@ export default function AboutPage() {
           <Separator className="w-2/3" />
         </div>
 
-        <div className="flex flex-col items-center  w-full gap-4">
-          <div className="flex flex-col items-center w-2/3 gap-4">
+        <div className="flex flex-col items-center w-full gap-4">
+        <div className="flex flex-col items-center w-full sm:w-11/12 md:w-4/6 lg:w-3/4 xl:w-2/3 gap-4">
             <div className="flex justify-center w-full">
               <TypographyPattern type="h2" text={'Numbers'} />
             </div>
