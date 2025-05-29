@@ -9,13 +9,13 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../../../constants';
-import { BsRocketTakeoff } from 'react-icons/bs';
+import { GiGhost } from "react-icons/gi";
+import { ImPacman } from "react-icons/im";
+import { BiLoaderCircle } from "react-icons/bi";
+import { FaRunning } from "react-icons/fa";
 import { GithubDataTypes } from '@/app/types/about-types';
 import { ImagePattern } from '@/components/patterns/image-pattern';
-import { LiaHackerrank } from 'react-icons/lia';
-import { DiGithubAlt } from 'react-icons/di';
 import { links_information } from '@/app/mapper';
-import BeutifyLinkPattern from '@/components/patterns/beautify-link-pattern';
 import BeautifyLinkPattern from '@/components/patterns/beautify-link-pattern';
 
 export default function AboutPage() {
@@ -67,8 +67,12 @@ export default function AboutPage() {
   console.log(PUBLIC_REPOS);
 
   return loading ? (
-    <div className="flex justify-center items-center h-screen">
-      <BsRocketTakeoff className="animate-bounce" />
+    <div className="flex justify-center items-center h-screen gap-2">
+      <GiGhost  className="animate-bounce text-5xl text-blue-700" />
+      <BiLoaderCircle  className="animate-spin text-xs dark:text-white" />
+      <ImPacman className="animate-bounce text-4xl text-yellow-400 duration-[1500ms] ease-in-out delay-500" />
+      <BiLoaderCircle  className="animate-spin text-xs dark:text-white" />
+      <FaRunning  className="animate-pulse text-4xl text-red-500" />
     </div>
   ) : (
     <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">

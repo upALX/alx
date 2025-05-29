@@ -58,24 +58,24 @@ export default function Home() {
               <div className="mt-12 flex flex-col items-center justify-center gap-8">
                 <HeroHighlightPattern colorizeText="Find me" />
                 <div className="flex gap-4">
-                  {/* <Link
+                  <Link
                     href={SOCIAL_LINKS.LINKEDIN}
                     target="_blank"
                     className="transition-colors"
-                  > */}
+                  >
                     <Button variant={'default'} size={'default'} className="min-w-[100px] justify-center">
                       Linkedin
                     </Button>
-                  {/* </Link> */}
-                  {/* <Link
+                  </Link>
+                  <Link
                     href={SOCIAL_LINKS.GITHUB}
                     target="_blank"
                     className="transition-colors"
-                  > */}
+                  >
                     <Button variant={'default'} size={'default'} className="min-w-[100px] justify-center">
                       GitHub
                     </Button>
-                  {/* </Link> */}
+                  </Link>
                 </div>
               </div>
             </CardContent>
