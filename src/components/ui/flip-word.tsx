@@ -16,6 +16,17 @@ export const FlipWords = ({
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth < 650);
+  }, []);
+
+  useEffect(() => {
+    handleResize(); // inicializa
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [handleResize]);
 
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
@@ -24,11 +35,13 @@ export const FlipWords = ({
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
+    if (!isAnimating && !isMobile) {
+      const timeout = setTimeout(() => {
         startAnimation();
       }, duration);
-  }, [isAnimating, duration, startAnimation]);
+      return () => clearTimeout(timeout);
+    }
+  }, [isAnimating, duration, startAnimation, isMobile]);
 
   const renderLetters = (text: string) => {
     return text.split('').map((letter, index) => (
@@ -68,6 +81,17 @@ export const FlipWords = ({
       </React.Fragment>
     ));
   };
+
+  if (isMobile) {
+    return (
+      <div className={mergeStyle(
+        'z-10 relative text-neutral-900 dark:text-neutral-100 px-2 text-center flex justify-center',
+        className
+      )}>
+        {currentWord}
+      </div>
+    );
+  }
 
   return (
     <AnimatePresence
