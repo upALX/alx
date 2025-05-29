@@ -9,13 +9,13 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../../../constants';
-import { BsRocketTakeoff } from 'react-icons/bs';
+import { GiGhost } from "react-icons/gi";
+import { ImPacman } from "react-icons/im";
+import { BiLoaderCircle } from "react-icons/bi";
+import { FaRunning } from "react-icons/fa";
 import { GithubDataTypes } from '@/app/types/about-types';
 import { ImagePattern } from '@/components/patterns/image-pattern';
-import { LiaHackerrank } from 'react-icons/lia';
-import { DiGithubAlt } from 'react-icons/di';
 import { links_information } from '@/app/mapper';
-import BeutifyLinkPattern from '@/components/patterns/beautify-link-pattern';
 import BeautifyLinkPattern from '@/components/patterns/beautify-link-pattern';
 
 export default function AboutPage() {
@@ -67,8 +67,12 @@ export default function AboutPage() {
   console.log(PUBLIC_REPOS);
 
   return loading ? (
-    <div className="flex justify-center items-center h-screen">
-      <BsRocketTakeoff className="animate-bounce" />
+    <div className="flex justify-center items-center h-screen gap-2">
+      <GiGhost  className="animate-bounce text-5xl text-blue-700" />
+      <BiLoaderCircle  className="animate-spin text-xs dark:text-white" />
+      <ImPacman className="animate-bounce text-4xl text-yellow-400 duration-[1500ms] ease-in-out delay-500" />
+      <BiLoaderCircle  className="animate-spin text-xs dark:text-white" />
+      <FaRunning  className="animate-pulse text-4xl text-red-500" />
     </div>
   ) : (
     <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
@@ -106,15 +110,15 @@ export default function AboutPage() {
           <Separator className="w-2/3" />
         </div>
 
-        <div className="flex flex-col items-center  w-full gap-4">
-          <div className="flex flex-col items-center w-2/3 gap-4">
+        <div className="flex flex-col items-center w-full gap-4">
+        <div className="flex flex-col items-center w-full sm:w-11/12 md:w-4/6 lg:w-3/4 xl:w-2/3 gap-4">
             <div className="flex justify-center w-full">
-              <TypographyPattern type="h2" text={'Numbers'} />
+              <TypographyPattern type="h3" text={'Quick stats'} />
             </div>
 
             <div className="flex flex-col gap-4 justify-center">
               <ImagePattern
-                src="https://stats-github-app.vercel.app?user=upalx&theme=python-dark"
+                src="https://github-readme-streak-stats-only-contribs.vercel.app?user=upalx&theme=python-dark&border_radius=4&date_format=M%20j%5B%2C%20Y%5D&card_width=550&hide_current_streak=true&hide_longest_streak=true"
                 alt="Stats numbers"
                 width={200}
                 height={200}
@@ -148,10 +152,10 @@ export default function AboutPage() {
 
         <div className="w-full flex flex-col items-center">
           <div className="flex justify-center w-full">
-            <TypographyPattern type="h2" text={'FAQ'} />
+            <TypographyPattern type="h3" text={'FAQ'} />
           </div>
 
-          <div className="flex justify-center w-full">
+          <div className="flex justify-center w-full mt-4">
             <FAQALX />
           </div>
         </div>
@@ -162,7 +166,7 @@ export default function AboutPage() {
 
         <div className="w-full flex flex-col items-center">
           <div className="flex justify-center w-full mb-4">
-            <TypographyPattern type="h2" text={'Socials'} />
+            <TypographyPattern type="h3" text={'Discover'} />
           </div>
 
           <div className="grid sm:grid-cols-1 md:grid-cols-2 items-center lg:flex-row lg:justify-center gap-4 break-words">
