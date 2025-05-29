@@ -114,7 +114,7 @@ export default function AboutPage() {
 
             <div className="flex flex-col gap-4 justify-center">
               <ImagePattern
-                src="https://stats-github-app.vercel.app?user=upalx&theme=python-dark"
+                src="https://github-readme-streak-stats-only-contribs.vercel.app?user=upalx&theme=python-dark&border_radius=4&date_format=M%20j%5B%2C%20Y%5D&card_width=550&hide_current_streak=true&hide_longest_streak=true"
                 alt="Stats numbers"
                 width={200}
                 height={200}
