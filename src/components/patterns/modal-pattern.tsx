@@ -27,11 +27,7 @@ export function AnimatedModal() {
             <div className="relative" onClick={(e) => e.stopPropagation()}>
               <div className="bg-white dark:bg-neutral-900 rounded-lg p-6 max-w-2xl w-full shadow-lg">
                 <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
-                  Book your trip to{" "}
-                  <span className="px-1 py-0.5 rounded-md bg-gray-100 dark:bg-neutral-800 dark:border-neutral-700 border border-gray-200">
-                    Bali
-                  </span>{" "}
-                  now! ✈️
+                  Experience in  
                 </h4>
 
                 <ImagesGrid />
