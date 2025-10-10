@@ -56,15 +56,10 @@ export default function RootLayout({
               <TypographyPattern
                 text={
                   <>
-                    Don&apos;t just copy, get inspired{' '}
                     <Link target="_blank" href="https://github.com/upALX/alx">
-                      <span className="text-muted-foreground hover:bg-muted">
-                        {' '}
-                        here.{' '}
-                      </span>{' '}
                       <span className="underline">
-                        Give and keep looking at the stars{' '}
-                      </span>{' '}
+                        Always keep looking at the stars{' '}
+                      </span>
                       ✨
                     </Link>
                   </>

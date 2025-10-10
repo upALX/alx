@@ -19,20 +19,26 @@ export default function Home() {
       <main className="flex-grow flex flex-col items-center justify-center overflow-y-auto">
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 items-center justify-center px-4">
           <div className="relative flex justify-center items-center">
-            <Image
-              className="z-50 rounded-xl border-2 border-slate-950 dark:border-gray-400"
-              src="https://avatars.githubusercontent.com/u/59508016?v=4"
-              alt="ALX Picture"
-              width={450}
-              height={220}
-              priority
-            />
+          <Image
+            className="z-50 rounded-full border-2 border-slate-950 dark:border-gray-400 w-40 sm:w-48 md:w-56 lg:w-72 xl:w-80 2xl:w-96 h-auto"
+            src="https://avatars.githubusercontent.com/u/59508016?v=4&s=500"
+            alt="ALX Picture"
+            priority
+            width={500}
+            height={500}
+            quality={90}
+            sizes="(max-width: 640px) 320px,   /* 2x de 160px */
+                (max-width: 768px) 384px,   /* 2x de 192px */
+                (max-width: 1024px) 448px,  /* 2x de 224px */
+                (max-width: 1280px) 576px,  /* 2x de 288px */
+                (max-width: 1536px) 640px,  /* 2x de 320px */
+                768px"                     /* 2x de 384px */
+          />
           </div>
 
           <Card className="border-none flex flex-col justify-start items-center text-center sm:order-none md:order-first ">
             <CardHeader>
-              <CardTitle>
-                <span className="text-2xl text-blue-700 ml-2">
+                <span className="text-2xl font-semibold ml-2">
                   <FlipWords
                     words={[
                       'What i cannot create, i do not understand.',
@@ -41,10 +47,9 @@ export default function Home() {
                     type="phrases"
                   />
                 </span>
-              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-pretty text-xl max-w-[750px]">
+              <div className="text-pretty text-xl max-w-[700px]">
                 <TypographyPattern
                   type="p"
                   text="I believe the power of learning anything lives in practice and consistency over time. This means that learning N things is a matter of one or two years; Being eloquent in one of them takes half a lifetime"
@@ -58,7 +63,7 @@ export default function Home() {
                     target="_blank"
                     className="transition-colors"
                   >
-                    <Button variant={'default'} size={'lg'}>
+                    <Button variant={'default'} size={'default'} className="min-w-[100px] justify-center">
                       Linkedin
                     </Button>
                   </Link>
@@ -67,7 +72,7 @@ export default function Home() {
                     target="_blank"
                     className="transition-colors"
                   >
-                    <Button variant={'default'} size={'lg'}>
+                    <Button variant={'default'} size={'default'} className="min-w-[100px] justify-center">
                       GitHub
                     </Button>
                   </Link>

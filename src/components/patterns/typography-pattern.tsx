@@ -36,7 +36,10 @@ export function TypographyPattern({ type, text }: TypographyTypes) {
       break;
     case 'p':
       viewTypography = (
-        <p className="leading-7 [&:not(:first-child)]:mt-6">{content}</p>
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-sm sm:text-base md:text-md lg:text-lg">
+        {content}
+        </p>
+
       );
       break;
     case 'cite':

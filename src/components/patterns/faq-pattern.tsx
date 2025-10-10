@@ -34,21 +34,6 @@ export function FAQALX() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-4">
-        <AccordionTrigger>
-          What tools and libraries have I used so far?
-        </AccordionTrigger>
-        <AccordionContent>
-          React Hook Form, ZOD, TanStack, Shadcn/UI, ChakraUI, GIT, AWS (S3,
-          Lambda, ELB, Cloud Watch), GCP (Kubernetes [GKE], Cloud Build, Cloud
-          Run, Cloud Storage, Secrets, Bucket, PubSub), PostgreSQL, MySQL,
-          MongoDB, Redis, SQlite, TypeORM, DjangoORM SQLAlchemyORM, PrismaORM,
-          EloquentORM, HibernateORM, Docker, Docker Compose, Apollo, Lighthouse,
-          GraphQL, TailwindCSS, ReactJS, Spark, Databricks, Kafka, Pandas,
-          Matplotlib, Grafana, Prometheus, ESlint, Husky, PNPM, NPM, YARN, PIP,
-          POETRY, Pytest.
-        </AccordionContent>
-      </AccordionItem>
-      <AccordionItem value="item-5">
         <AccordionTrigger>What do I like besides technology?</AccordionTrigger>
         <AccordionContent>
           I&apos;m Alexandre. Fan of MMORPG style games (Lineage, New World) and
