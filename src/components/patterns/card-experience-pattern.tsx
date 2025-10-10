@@ -37,7 +37,7 @@ export function CardExperiencePattern(props: PropsCardExperiencePattern) {
       </CardHeader>
       <CardContent>{props.text_content}</CardContent>
       <CardFooter>
-      <AnimatedModal></AnimatedModal>
+      <AnimatedModal/>
         <Button variant={'link'}>
           {' '}
           <Link href={props.see_more_link}> See more </Link>
