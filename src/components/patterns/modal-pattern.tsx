@@ -26,7 +26,9 @@ export function AnimatedModal({ slug }: { slug?: string }) {
 
   return (
     <Modal>
-      <ModalTrigger className="px-2 py-1 text-xs">Details</ModalTrigger>
+      <ModalTrigger className="text-primary underline-offset-4 hover:underline">
+        See more
+      </ModalTrigger>
       <ModalBody>
         <ModalContent>
           <div className="flex flex-col gap-6">
