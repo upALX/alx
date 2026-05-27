@@ -5,4 +5,5 @@ export type PropsCardExperiencePattern = {
   text_content: string;
   type_experience: string;
   see_more_link: string;
+  slug?: string;
 };
