@@ -1,235 +1,104 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion } from "motion/react";
-import { createPortal } from "react-dom";
-import { Button } from "../ui/button";
+'use client';
+import { snoop_information } from '@/app/mapper';
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalTrigger,
+} from '@/components/ui/modal';
+import { Badge } from '@/components/ui/badge';
 
-export function AnimatedModal() {
-  const [mounted, setMounted] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+type CardDetail = {
+  slug: string;
+  title: string;
+  period: string;
+  highlights: string[];
+  tech_stack: string[];
+  detailed_description: string;
+  images: string[];
+};
 
-  useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
-
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
+export function AnimatedModal({ slug }: { slug?: string }) {
+  const detail = snoop_information.card_details.find(
+    (d: CardDetail) => d.slug === slug
+  );
+  if (!detail) return null;
 
   return (
-    <>
-      <Button onClick={openModal} variant={"outline"}>Snoop</Button>
+    <Modal>
+      <ModalTrigger className="px-2 py-1 text-xs">Details</ModalTrigger>
+      <ModalBody>
+        <ModalContent>
+          <div className="flex flex-col gap-6">
+            <div className="text-center">
+              <h4 className="text-lg md:text-2xl font-bold text-neutral-600 dark:text-neutral-100">
+                {detail.title}
+              </h4>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+                {detail.period}
+              </p>
+            </div>
 
-      {isOpen &&
-        createPortal(
-          <div
-            className="fixed inset-0 z-50 flex justify-center items-center bg-black/50"
-            onClick={closeModal} 
-          >
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
-              <div className="bg-white dark:bg-neutral-900 rounded-lg p-6 max-w-2xl w-full shadow-lg">
-                <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
-                  Experience in  
-                </h4>
+            {detail.images.length > 0 && <ImagesGrid images={detail.images} />}
 
-                <ImagesGrid />
+            <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              {detail.detailed_description}
+            </p>
 
-                <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
-                  <InfoItem icon={PlaneIcon} text="5 connecting flights" />
-                  <InfoItem icon={ElevatorIcon} text="12 hotels" />
-                  <InfoItem icon={VacationIcon} text="69 visiting spots" />
-                  <InfoItem icon={FoodIcon} text="Good food everyday" />
-                  <InfoItem icon={MicIcon} text="Open Mic" />
-                  <InfoItem icon={ParachuteIcon} text="Paragliding" />
-                </div>
+            {detail.highlights.length > 0 && (
+              <div>
+                <h5 className="text-sm font-semibold text-neutral-600 dark:text-neutral-100 mb-2">
+                  Highlights
+                </h5>
+                <ul className="list-disc list-inside space-y-1">
+                  {detail.highlights.map((h, i) => (
+                    <li
+                      key={i}
+                      className="text-sm text-neutral-600 dark:text-neutral-300"
+                    >
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-                <div className="flex justify-center gap-4 mt-6">
-                  <button
-                    className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28"
-                    onClick={closeModal}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28"
-                    onClick={() => {
-                      console.log("Booked!");
-                      closeModal();
-                    }}
-                  >
-                    Book Now
-                  </button>
+            {detail.tech_stack.length > 0 && (
+              <div>
+                <h5 className="text-sm font-semibold text-neutral-600 dark:text-neutral-100 mb-2">
+                  Tech Stack
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  {detail.tech_stack.map((tech, i) => (
+                    <Badge key={i} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
                 </div>
               </div>
-            </div>
-          </div>,
-          document.body
-        )}
-    </>
+            )}
+          </div>
+        </ModalContent>
+      </ModalBody>
+    </Modal>
   );
 }
 
-function ImagesGrid() {
-  const images = [
-    "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop",
-  ];
-
+function ImagesGrid({ images }: { images: string[] }) {
   return (
-    <div className="flex justify-center items-center">
-      {images.map((image, idx) => (
-        <motion.div
-          key={"images" + idx}
-          style={{ rotate: Math.random() * 20 - 10 }}
-          whileHover={{ scale: 1.1, rotate: 0, zIndex: 100 }}
-          whileTap={{ scale: 1.1, rotate: 0, zIndex: 100 }}
-          className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
+    <div className="flex justify-center items-center flex-wrap gap-2">
+      {images.map((src, idx) => (
+        <div
+          key={idx}
+          className="rounded-lg overflow-hidden shrink-0 border border-neutral-200 dark:border-neutral-700"
         >
           <img
-            src={image}
-            alt="bali images"
-            width="500"
-            height="500"
-            className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0"
+            src={src}
+            alt=""
+            className="h-20 w-20 md:h-28 md:w-28 object-cover"
           />
-        </motion.div>
+        </div>
       ))}
     </div>
   );
 }
-
-function InfoItem({
-  icon: Icon,
-  text,
-}: {
-  icon: React.ElementType;
-  text: string;
-}) {
-  return (
-    <div className="flex items-center justify-center">
-      <Icon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-      <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-        {text}
-      </span>
-    </div>
-  );
-}
-
-const PlaneIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M16 10h4a2 2 0 0 1 0 4h-4l-4 7h-3l2 -7h-4l-2 2h-3l2 -4l-2 -4h3l2 2h4l-2 -7h3z" />
-  </svg>
-);
-
-const VacationIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M17.553 16.75a7.5 7.5 0 0 0 -10.606 0" />
-    <path d="M18 3.804a6 6 0 0 0 -8.196 2.196l10.392 6a6 6 0 0 0 -2.196 -8.196z" />
-    <path d="M16.732 10c1.658 -2.87 2.225 -5.644 1.268 -6.196c-.957 -.552 -3.075 1.326 -4.732 4.196" />
-    <path d="M15 9l-3 5.196" />
-    <path d="M3 19.25a2.4 2.4 0 0 1 1 -.25a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 1 .25" />
-  </svg>
-);
-
-const ElevatorIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M5 4m0 1a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1z" />
-    <path d="M10 10l2 -2l2 2" />
-    <path d="M10 14l2 2l2 -2" />
-  </svg>
-);
-
-const FoodIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M20 20c0 -3.952 -.966 -16 -4.038 -16s-3.962 9.087 -3.962 14.756c0 -5.669 -.896 -14.756 -3.962 -14.756c-3.065 0 -4.038 12.048 -4.038 16" />
-  </svg>
-);
-
-const MicIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M15 12.9a5 5 0 1 0 -3.902 -3.9" />
-    <path d="M15 12.9l-3.902 -3.899l-7.513 8.584a2 2 0 1 0 2.827 2.83l8.588 -7.515z" />
-  </svg>
-);
-
-const ParachuteIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M22 12a10 10 0 1 0 -20 0" />
-    <path d="M22 12c0 -1.66 -1.46 -3 -3.25 -3c-1.8 0 -3.25 1.34 -3.25 3c0 -1.66 -1.57 -3 -3.5 -3s-3.5 1.34 -3.5 3c0 -1.66 -1.46 -3 -3.25 -3c-1.8 0 -3.25 1.34 -3.25 3" />
-    <path d="M2 12l10 10l-3.5 -10" />
-    <path d="M15.5 12l-3.5 10l10 -10" />
-  </svg>
-);
