@@ -1,7 +1,7 @@
 {
   "cards_timeline": [
     {
-      "id": "d912b295-cfdd-4bfc-bdb0-992fc90cb832",
+      "slug": "qintess-full-stack-ml",
       "title": "QINTESS - Full Stack ML",
       "badge_description": "Current",
       "description": "Mid Level Engineer",
@@ -10,7 +10,7 @@
       "see_more_link": "https://www.linkedin.com/in/alxinc/"
     },
     {
-      "id": "b1f9d0c8-252a-44df-9e83-2cffddc2733a",
+      "slug": "rock-full-stack",
       "title": "ROCK - Full Stack",
       "badge_description": "1 year",
       "description": "Mid Level Engineer",
@@ -19,7 +19,7 @@
       "see_more_link": "https://www.linkedin.com/in/alxinc/"
     },
     {
-      "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
+      "slug": "math-and-statistics",
       "title": "Math and Statistics",
       "badge_description": "2022 - 2023",
       "description": "MBA degree",
@@ -28,7 +28,7 @@
       "see_more_link": "https://www.linkedin.com/in/alxinc/"
     },
     {
-      "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
+      "slug": "qi-tech-full-stack",
       "title": "QI TECH - Full Stack",
       "badge_description": "2 years",
       "description": "Junior to Mid level Engineer",
@@ -37,7 +37,7 @@
       "see_more_link": "https://www.linkedin.com/in/alxinc/"
     },
     {
-      "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
+      "slug": "data-analysis",
       "title": "Data Analysis",
       "badge_description": "2021 - 2022",
       "description": "Specialization degree",
@@ -46,7 +46,7 @@
       "see_more_link": "https://www.linkedin.com/in/alxinc/"
     },
     {
-      "uuid": "01cc7da7-281e-41e5-a508-822cc3368198",
+      "slug": "information-security",
       "title": "Information Security",
       "badge_description": "2021 - 2022",
       "description": "MBA degree",
@@ -55,7 +55,7 @@
       "see_more_link": "https://www.linkedin.com/in/alxinc/"
     },
     {
-      "uuid": "e63fd080-4270-4161-a58c-e77d86d5bf6a",
+      "slug": "information-technology",
       "title": "Information Technology",
       "badge_description": "2018 - 2021",
       "description": "Major degree",
