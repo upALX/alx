@@ -4,6 +4,11 @@
       "slug": "qintess-full-stack-ml",
       "title": "QINTESS - Full Stack ML",
       "period": "Current",
+      "type": "work",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alxinc/",
+        "company": "https://qintess.com"
+      },
       "highlights": [
         "Improved ML model inference pipelines, reducing processing time by 40%",
         "Developed microservices for real-time banking data processing",
@@ -23,12 +28,27 @@
       "images": [
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=300&fit=crop"
+      ],
+      "contributions": [
+        {
+          "label": "ML Pipeline Optimizer",
+          "url": "https://github.com/upALX"
+        },
+        {
+          "label": "Banking Data Processor",
+          "url": "https://github.com/upALX"
+        }
       ]
     },
     {
       "slug": "rock-full-stack",
       "title": "ROCK - Full Stack",
       "period": "1 year",
+      "type": "work",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alxinc/",
+        "company": "https://rock.com.br"
+      },
       "highlights": [
         "Architected end-to-end solutions for the real estate market",
         "Developed scalable APIs and responsive frontends",
@@ -46,12 +66,27 @@
       "images": [
         "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop"
+      ],
+      "contributions": [
+        {
+          "label": "Real Estate API",
+          "url": "https://github.com/upALX"
+        },
+        {
+          "label": "Frontend Component Library",
+          "url": "https://github.com/upALX"
+        }
       ]
     },
     {
       "slug": "qi-tech-full-stack",
       "title": "QI TECH - Full Stack",
       "period": "2 years",
+      "type": "work",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alxinc/",
+        "company": "https://qitech.com.br"
+      },
       "highlights": [
         "Developed robust and scalable solutions for the Brazilian financial market",
         "Built real-time data processing systems handling millions of transactions",
@@ -70,12 +105,27 @@
       "images": [
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop"
+      ],
+      "contributions": [
+        {
+          "label": "Financial Transaction Engine",
+          "url": "https://github.com/upALX"
+        },
+        {
+          "label": "Legacy Migration Toolkit",
+          "url": "https://github.com/upALX"
+        }
       ]
     },
     {
       "slug": "math-and-statistics",
       "title": "Math and Statistics",
       "period": "2022 - 2023",
+      "type": "study",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alxinc/",
+        "company": "https://example.edu"
+      },
       "highlights": [
         "In-depth studies in mathematics with focus on the financial area",
         "Applied statistical modeling to real-world financial datasets",
@@ -86,12 +136,27 @@
       "images": [
         "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=400&h=300&fit=crop"
+      ],
+      "projects": [
+        {
+          "label": "Time Series Prediction Model",
+          "url": "https://github.com/upALX"
+        },
+        {
+          "label": "Statistical Analysis Toolkit",
+          "url": "https://github.com/upALX"
+        }
       ]
     },
     {
       "slug": "data-analysis",
       "title": "Data Analysis",
       "period": "2021 - 2022",
+      "type": "study",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alxinc/",
+        "company": "https://example.edu"
+      },
       "highlights": [
         "In-depth studies in data analysis and processing",
         "Worked with large datasets using Python and SQL",
@@ -102,12 +167,27 @@
       "images": [
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+      ],
+      "projects": [
+        {
+          "label": "Data Visualization Dashboard",
+          "url": "https://github.com/upALX"
+        },
+        {
+          "label": "ETL Pipeline Project",
+          "url": "https://github.com/upALX"
+        }
       ]
     },
     {
       "slug": "information-security",
       "title": "Information Security",
       "period": "2021 - 2022",
+      "type": "study",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alxinc/",
+        "company": "https://example.edu"
+      },
       "highlights": [
         "In-depth studies in information security management and legislation",
         "Developed security policies and risk assessment frameworks",
@@ -118,12 +198,27 @@
       "images": [
         "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400&h=300&fit=crop"
+      ],
+      "projects": [
+        {
+          "label": "Security Audit Framework",
+          "url": "https://github.com/upALX"
+        },
+        {
+          "label": "Risk Assessment Tool",
+          "url": "https://github.com/upALX"
+        }
       ]
     },
     {
       "slug": "information-technology",
       "title": "Information Technology",
       "period": "2018 - 2021",
+      "type": "study",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alxinc/",
+        "company": "https://example.edu"
+      },
       "highlights": [
         "In-depth studies in software and computing engineering",
         "Developed multiple full-stack projects as part of coursework",
@@ -134,6 +229,16 @@
       "images": [
         "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop",
         "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=300&fit=crop"
+      ],
+      "projects": [
+        {
+          "label": "Full-Stack Web Application",
+          "url": "https://github.com/upALX"
+        },
+        {
+          "label": "Algorithm Visualizer",
+          "url": "https://github.com/upALX"
+        }
       ]
     }
   ]
