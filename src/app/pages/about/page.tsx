@@ -97,7 +97,6 @@ export default function AboutPage() {
                   badge_description={card.badge_description}
                   text_content={card.text_content}
                   type_experience={card.type_experience}
-                  see_more_link={card.see_more_link}
                 />
               </div>
             </div>
