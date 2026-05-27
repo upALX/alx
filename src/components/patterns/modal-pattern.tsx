@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { snoop_information } from '@/app/mapper';
 import {
   Modal,
@@ -7,15 +8,33 @@ import {
   ModalTrigger,
 } from '@/components/ui/modal';
 import { Badge } from '@/components/ui/badge';
+import {
+  FaLinkedin,
+  FaGlobe,
+  FaGithub,
+  FaExternalLinkAlt,
+} from 'react-icons/fa';
+
+type LinkItem = {
+  label: string;
+  url: string;
+};
 
 type CardDetail = {
   slug: string;
   title: string;
   period: string;
+  type: string;
+  links: {
+    linkedin: string;
+    company: string;
+  };
   highlights: string[];
   tech_stack: string[];
   detailed_description: string;
   images: string[];
+  contributions?: LinkItem[];
+  projects?: LinkItem[];
 };
 
 export function AnimatedModal({ slug }: { slug?: string }) {
@@ -23,6 +42,9 @@ export function AnimatedModal({ slug }: { slug?: string }) {
     (d: CardDetail) => d.slug === slug
   );
   if (!detail) return null;
+
+  const fallbackLinks =
+    detail.type === 'work' ? detail.contributions : detail.projects;
 
   return (
     <Modal>
@@ -41,7 +63,16 @@ export function AnimatedModal({ slug }: { slug?: string }) {
               </p>
             </div>
 
-            {detail.images.length > 0 && <ImagesGrid images={detail.images} />}
+            <LinksSection links={detail.links} />
+
+            {detail.images.length > 0 ? (
+              <ImagesGrid images={detail.images} />
+            ) : (
+              fallbackLinks &&
+              fallbackLinks.length > 0 && (
+                <FallbackLinks items={fallbackLinks} type={detail.type} />
+              )
+            )}
 
             <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
               {detail.detailed_description}
@@ -86,21 +117,91 @@ export function AnimatedModal({ slug }: { slug?: string }) {
   );
 }
 
+function LinksSection({ links }: { links: CardDetail['links'] }) {
+  return (
+    <div className="flex justify-center gap-6">
+      <a
+        href={links.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        <FaLinkedin className="h-4 w-4" />
+        LinkedIn
+        <FaExternalLinkAlt className="h-3 w-3" />
+      </a>
+      <a
+        href={links.company}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-1.5 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+      >
+        <FaGlobe className="h-4 w-4" />
+        Website
+        <FaExternalLinkAlt className="h-3 w-3" />
+      </a>
+    </div>
+  );
+}
+
 function ImagesGrid({ images }: { images: string[] }) {
+  const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
+
+  const toggleExpand = (idx: number) => {
+    setExpandedIdx(expandedIdx === idx ? null : idx);
+  };
+
   return (
     <div className="flex justify-center items-center flex-wrap gap-2">
-      {images.map((src, idx) => (
-        <div
-          key={idx}
-          className="rounded-lg overflow-hidden shrink-0 border border-neutral-200 dark:border-neutral-700"
-        >
-          <img
-            src={src}
-            alt=""
-            className="h-20 w-20 md:h-28 md:w-28 object-cover"
-          />
-        </div>
-      ))}
+      {images.map((src, idx) => {
+        const isExpanded = expandedIdx === idx;
+        return (
+          <div
+            key={idx}
+            onClick={() => toggleExpand(idx)}
+            className={`
+              rounded-lg overflow-hidden shrink-0 border border-neutral-200
+              dark:border-neutral-700 cursor-pointer transition-all duration-300
+              hover:scale-110 hover:z-10
+              ${isExpanded ? 'scale-110 z-10' : ''}
+            `}
+          >
+            <img
+              src={src}
+              alt=""
+              className={`
+                object-cover transition-all duration-300
+                ${isExpanded ? 'h-40 w-40 md:h-48 md:w-48' : 'h-20 w-20 md:h-28 md:w-28'}
+              `}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function FallbackLinks({ items, type }: { items: LinkItem[]; type: string }) {
+  return (
+    <div>
+      <h5 className="text-sm font-semibold text-neutral-600 dark:text-neutral-100 mb-3 text-center">
+        {type === 'work' ? 'Contributions' : 'Projects'}
+      </h5>
+      <div className="flex flex-col gap-2">
+        {items.map((item, i) => (
+          <a
+            key={i}
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            <FaGithub className="h-4 w-4 shrink-0" />
+            {item.label}
+            <FaExternalLinkAlt className="h-3 w-3 shrink-0" />
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
