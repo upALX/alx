@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { snoop_information } from '@/app/mapper';
 import {
   Modal,
@@ -14,6 +14,12 @@ import {
   FaGithub,
   FaExternalLinkAlt,
 } from 'react-icons/fa';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carroussel';
+import Autoplay from 'embla-carousel-autoplay';
 
 type LinkItem = {
   label: string;
@@ -31,20 +37,19 @@ type CardDetail = {
   };
   highlights: string[];
   tech_stack: string[];
-  detailed_description: string;
   images: string[];
   contributions?: LinkItem[];
   projects?: LinkItem[];
 };
 
 export function AnimatedModal({ slug }: { slug?: string }) {
+  const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   const detail = snoop_information.card_details.find(
     (d: CardDetail) => d.slug === slug
   );
   if (!detail) return null;
 
-  const fallbackLinks =
-    detail.type === 'work' ? detail.contributions : detail.projects;
+  const items = detail.type === 'work' ? detail.contributions : detail.projects;
 
   return (
     <Modal>
@@ -68,15 +73,56 @@ export function AnimatedModal({ slug }: { slug?: string }) {
             {detail.images.length > 0 ? (
               <ImagesGrid images={detail.images} />
             ) : (
-              fallbackLinks &&
-              fallbackLinks.length > 0 && (
-                <FallbackLinks items={fallbackLinks} type={detail.type} />
-              )
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  src="/image_fallback_two.svg"
+                  alt=""
+                  className="h-24 w-24 md:h-32 md:w-32 object-contain opacity-40"
+                />
+                <p className="text-sm text-neutral-400 dark:text-neutral-500">
+                  No images to display.
+                </p>
+              </div>
             )}
 
-            <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
-              {detail.detailed_description}
-            </p>
+            <div>
+              <h5 className="text-sm font-semibold text-neutral-600 dark:text-neutral-100 mb-3 text-center">
+                {detail.type === 'work' ? 'Contributions' : 'Projects'}
+              </h5>
+              {items && items.length > 0 ? (
+                <Carousel
+                  opts={{ loop: true, align: 'center' }}
+                  plugins={[plugin.current]}
+                  onMouseEnter={() => plugin.current.stop()}
+                  onMouseLeave={() => plugin.current.play()}
+                >
+                  <CarouselContent>
+                    {items.map((item, i) => (
+                      <CarouselItem key={i} className="basis-4/5 md:basis-3/5">
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 p-3 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors text-sm"
+                        >
+                          <FaGithub className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-300" />
+                          <span className="truncate font-medium text-blue-600 dark:text-blue-400">
+                            {item.label}
+                          </span>
+                          <FaExternalLinkAlt className="h-3 w-3 shrink-0 text-neutral-400" />
+                        </a>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              ) : (
+                <p className="text-center text-sm text-neutral-400 dark:text-neutral-500">
+                  No related{' '}
+                  {detail.type === 'work' ? 'contributions' : 'projects'} to
+                  display.
+                </p>
+              )}
+            </div>
 
             {detail.highlights.length > 0 && (
               <div>
@@ -177,31 +223,6 @@ function ImagesGrid({ images }: { images: string[] }) {
           </div>
         );
       })}
-    </div>
-  );
-}
-
-function FallbackLinks({ items, type }: { items: LinkItem[]; type: string }) {
-  return (
-    <div>
-      <h5 className="text-sm font-semibold text-neutral-600 dark:text-neutral-100 mb-3 text-center">
-        {type === 'work' ? 'Contributions' : 'Projects'}
-      </h5>
-      <div className="flex flex-col gap-2">
-        {items.map((item, i) => (
-          <a
-            key={i}
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            <FaGithub className="h-4 w-4 shrink-0" />
-            {item.label}
-            <FaExternalLinkAlt className="h-3 w-3 shrink-0" />
-          </a>
-        ))}
-      </div>
     </div>
   );
 }
