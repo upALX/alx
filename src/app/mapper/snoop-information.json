@@ -29,7 +29,11 @@
         "Redis",
         "GitHub Actions"
       ],
-      "images": [],
+      "images": [
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633019/IMG_20251212_162654488_HDR_nx13wm.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633093/IMG_20260130_180817470_hyzply.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633132/IMG_20260311_212102540_d2eyz0.jpg"
+      ],
       "contributions": []
     },
     {
@@ -112,7 +116,9 @@
         "PostgreSQL",
         "Gitlab CI/CD"
       ],
-      "images": [],
+      "images": [
+        "https://photos.google.com/share/AF1QipOe6ENyRNQzu6ObCLyzdToAjfNfWfdMqF99MjA8LzeegFTnnUDF7RRHYfcClV-rtw/photo/AF1QipMOYBT-aAudSvlU1tt0sNgx8nfIto0dMbgXcHPn"
+      ],
       "contributions": []
     },
     {

@@ -192,15 +192,21 @@ function LinksSection({ links }: { links: CardDetail['links'] }) {
 
 function ImagesGrid({ images }: { images: string[] }) {
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
+  const [loaded, setLoaded] = useState<Record<number, boolean>>({});
 
   const toggleExpand = (idx: number) => {
     setExpandedIdx(expandedIdx === idx ? null : idx);
+  };
+
+  const handleLoad = (idx: number) => {
+    setLoaded(prev => ({ ...prev, [idx]: true }));
   };
 
   return (
     <div className="flex justify-center items-center flex-wrap gap-2">
       {images.map((src, idx) => {
         const isExpanded = expandedIdx === idx;
+        const optimizedSrc = src.replace('/upload/', '/upload/f_auto,q_auto/');
         return (
           <div
             key={idx}
@@ -208,16 +214,20 @@ function ImagesGrid({ images }: { images: string[] }) {
             className={`
               rounded-lg overflow-hidden shrink-0 border border-neutral-200
               dark:border-neutral-700 cursor-pointer transition-all duration-300
-              hover:scale-110 hover:z-10
-              ${isExpanded ? 'scale-110 z-10' : ''}
+              hover:scale-110 hover:z-10 relative
+              ${isExpanded ? 'scale-110 z-10 h-40 w-40 md:h-48 md:w-48' : 'h-20 w-20 md:h-28 md:w-28'}
             `}
           >
+            {!loaded[idx] && (
+              <div className="absolute inset-0 bg-neutral-200 dark:bg-neutral-700 animate-pulse rounded-lg" />
+            )}
             <img
-              src={src}
+              src={optimizedSrc}
               alt=""
+              onLoad={() => handleLoad(idx)}
               className={`
-                object-cover transition-all duration-300
-                ${isExpanded ? 'h-40 w-40 md:h-48 md:w-48' : 'h-20 w-20 md:h-28 md:w-28'}
+                object-cover w-full h-full transition-opacity duration-300
+                ${loaded[idx] ? 'opacity-100' : 'opacity-0'}
               `}
             />
           </div>
