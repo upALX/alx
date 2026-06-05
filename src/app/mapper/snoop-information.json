@@ -61,7 +61,10 @@
         "PostgreSQL",
         "GitHub Actions"
       ],
-      "images": [],
+      "images": [
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633178/IMG_20251017_173041602_jc5tio.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633186/IMG_20250815_082442315_e6jrcm.jpg"
+      ],
       "contributions": []
     },
     {
