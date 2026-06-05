@@ -108,7 +108,10 @@
 
 @layer base {
   * {
-    @apply border-border transition-colors duration-500;
+    @apply border-border;
+  }
+  html {
+    transition: background-color 0.5s ease;
   }
   body {
     @apply bg-background text-foreground;
