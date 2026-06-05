@@ -1,13 +1,45 @@
 {
   "card_details": [
     {
-      "slug": "qintess-full-stack-ml",
-      "title": "QINTESS - Full Stack ML",
+      "slug": "azion-software-engineer",
+      "title": "AZION - Software Engineer",
       "period": "Current",
       "type": "work",
       "links": {
-        "linkedin": "https://www.linkedin.com/in/alxinc/",
-        "company": "https://qintess.com"
+        "linkedin": "https://www.linkedin.com/in/alxinc/details/experience/",
+        "company": "https://azion.com"
+      },
+      "highlights": [
+        "High-scale, high-performance architectures handling ~500k req/s",
+        "Focus on billing, consolidation, and data pipelines (ETL)",
+        "Real-time log processing using Kafka streaming",
+        "Cross-functional work across data"
+      ],
+      "tech_stack": [
+        "Kafka",
+        "Python",
+        "Go",
+        "Docker",
+        "Kubernetes",
+        "Django",
+        "PostgreSQL",
+        "MySQL",
+        "SQL",
+        "ClickHouse",
+        "Redis",
+        "GitHub Actions"
+      ],
+      "images": [],
+      "contributions": []
+    },
+    {
+      "slug": "qintess-full-stack-ml",
+      "title": "QINTESS - Full Stack ML",
+      "period": "2024 - 2025",
+      "type": "work",
+      "links": {
+        "linkedin": "https://www.linkedin.com/in/alxinc/details/experience/",
+        "company": "https://qintess.com/en/about"
       },
       "highlights": [
         "Improved ML model inference pipelines, reducing processing time by 40%",
@@ -24,59 +56,36 @@
         "PostgreSQL",
         "GitHub Actions"
       ],
-      "detailed_description": "At QINTESS, I focus on improving and developing routines, services, and models to scale the efficiency of banking processes in Machine Learning environments. Working end-to-end from data ingestion to model deployment in production.",
-      "images": [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=300&fit=crop"
-      ],
-      "contributions": [
-        {
-          "label": "ML Pipeline Optimizer",
-          "url": "https://github.com/upALX"
-        },
-        {
-          "label": "Banking Data Processor",
-          "url": "https://github.com/upALX"
-        }
-      ]
+      "images": [],
+      "contributions": []
     },
     {
       "slug": "rock-full-stack",
       "title": "ROCK - Full Stack",
-      "period": "1 year",
+      "period": "2023 - 2024",
       "type": "work",
       "links": {
-        "linkedin": "https://www.linkedin.com/in/alxinc/",
-        "company": "https://rock.com.br"
+        "linkedin": "https://www.linkedin.com/in/alxinc/details/experience/",
+        "company": "https://rock.vc/a-rock"
       },
       "highlights": [
         "Architected end-to-end solutions for the real estate market",
-        "Developed scalable APIs and responsive frontends",
+        "Developed scalable beautiful and responsive frontends",
         "Implemented CI/CD pipelines and automated testing"
       ],
       "tech_stack": [
+        "Python",
+        "Tanstack",
+        "Next.js",
         "React",
         "Node.js",
         "TypeScript",
         "PostgreSQL",
         "Docker",
-        "AWS"
+        "Google Cloud Platform"
       ],
-      "detailed_description": "Creating and idealizing solutions for the real estate market. Responsible for the full development cycle, from architecture design to deployment and monitoring.",
-      "images": [
-        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop"
-      ],
-      "contributions": [
-        {
-          "label": "Real Estate API",
-          "url": "https://github.com/upALX"
-        },
-        {
-          "label": "Frontend Component Library",
-          "url": "https://github.com/upALX"
-        }
-      ]
+      "images": [],
+      "contributions": []
     },
     {
       "slug": "qi-tech-full-stack",
@@ -84,7 +93,7 @@
       "period": "2 years",
       "type": "work",
       "links": {
-        "linkedin": "https://www.linkedin.com/in/alxinc/",
+        "linkedin": "https://www.linkedin.com/in/alxinc/details/experience/",
         "company": "https://qitech.com.br"
       },
       "highlights": [
@@ -96,26 +105,15 @@
         "Java",
         "Spring Boot",
         "React",
-        "Angular",
-        "Oracle",
+        "Python",
+        "Falcon Framework",
         "Docker",
-        "RabbitMQ"
+        "Kubernetes",
+        "PostgreSQL",
+        "Gitlab CI/CD"
       ],
-      "detailed_description": "Developed robust and scalable solutions for the Brazilian financial market. Worked on critical banking systems ensuring high availability and compliance with financial regulations.",
-      "images": [
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop"
-      ],
-      "contributions": [
-        {
-          "label": "Financial Transaction Engine",
-          "url": "https://github.com/upALX"
-        },
-        {
-          "label": "Legacy Migration Toolkit",
-          "url": "https://github.com/upALX"
-        }
-      ]
+      "images": [],
+      "contributions": []
     },
     {
       "slug": "math-and-statistics",
@@ -123,8 +121,8 @@
       "period": "2022 - 2023",
       "type": "study",
       "links": {
-        "linkedin": "https://www.linkedin.com/in/alxinc/",
-        "company": "https://example.edu"
+        "linkedin": "https://www.linkedin.com/in/alxinc/details/education/",
+        "company": "https://no.descomplica.com.br/hubfs/MBA%20em%20Matem%C3%A1tica%20Financeira%20e%20Estat%C3%ADstica%20.pdf?utm_referrer=https%3A%2F%2Fno.descomplica.com.br%2Fguia-de-curso-mba-em-matematica-financeira-e-estatistica%2Fpos-graduacao%2Fobg%3FsubmissionGuid%3D1ffb043e-649b-45a1-bb62-f02126f1684c"
       },
       "highlights": [
         "In-depth studies in mathematics with focus on the financial area",
@@ -132,21 +130,8 @@
         "Developed predictive models using time series analysis"
       ],
       "tech_stack": ["R", "Python", "Jupyter", "LaTeX", "MATLAB"],
-      "detailed_description": "MBA degree with in-depth studies in mathematics with a focus on the financial area. Covered topics including stochastic calculus, statistical inference, and quantitative risk management.",
-      "images": [
-        "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?w=400&h=300&fit=crop"
-      ],
-      "projects": [
-        {
-          "label": "Time Series Prediction Model",
-          "url": "https://github.com/upALX"
-        },
-        {
-          "label": "Statistical Analysis Toolkit",
-          "url": "https://github.com/upALX"
-        }
-      ]
+      "images": [],
+      "projects": []
     },
     {
       "slug": "data-analysis",
@@ -154,30 +139,17 @@
       "period": "2021 - 2022",
       "type": "study",
       "links": {
-        "linkedin": "https://www.linkedin.com/in/alxinc/",
-        "company": "https://example.edu"
+        "linkedin": "https://www.linkedin.com/in/alxinc/details/education/",
+        "company": "https://no.descomplica.com.br/hubfs/PDC%20-%20P%C3%B3s-gradua%C3%A7%C3%A3o%20em%20An%C3%A1lise%20de%20Dados.pptx%20.pdf"
       },
       "highlights": [
         "In-depth studies in data analysis and processing",
         "Worked with large datasets using Python and SQL",
         "Developed data visualization dashboards for business insights"
       ],
-      "tech_stack": ["Python", "Pandas", "SQL", "Power BI", "Tableau"],
-      "detailed_description": "Specialization degree focused on data analysis and processing. Covered data cleaning, transformation, visualization, and statistical analysis techniques.",
-      "images": [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
-      ],
-      "projects": [
-        {
-          "label": "Data Visualization Dashboard",
-          "url": "https://github.com/upALX"
-        },
-        {
-          "label": "ETL Pipeline Project",
-          "url": "https://github.com/upALX"
-        }
-      ]
+      "tech_stack": ["Python", "Pandas", "SQL", "Power BI", "Spark", "Hadoop"],
+      "images": [],
+      "projects": []
     },
     {
       "slug": "information-security",
@@ -185,8 +157,8 @@
       "period": "2021 - 2022",
       "type": "study",
       "links": {
-        "linkedin": "https://www.linkedin.com/in/alxinc/",
-        "company": "https://example.edu"
+        "linkedin": "https://www.linkedin.com/in/alxinc/details/education/",
+        "company": "https://no.descomplica.com.br/hubfs/PDC22%20-%20MBA%20em%20Seguran%C3%A7a%20da%20Informa%C3%A7%C3%A3o%20(1).pdf"
       },
       "highlights": [
         "In-depth studies in information security management and legislation",
@@ -194,21 +166,8 @@
         "Studied compliance standards (ISO 27001, LGPD)"
       ],
       "tech_stack": ["Kali Linux", "Wireshark", "Metasploit", "Nmap"],
-      "detailed_description": "MBA degree in information security with a focus on management and legislation. Covered risk management, security governance, digital forensics, and data protection laws.",
-      "images": [
-        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400&h=300&fit=crop"
-      ],
-      "projects": [
-        {
-          "label": "Security Audit Framework",
-          "url": "https://github.com/upALX"
-        },
-        {
-          "label": "Risk Assessment Tool",
-          "url": "https://github.com/upALX"
-        }
-      ]
+      "images": [],
+      "projects": []
     },
     {
       "slug": "information-technology",
@@ -216,8 +175,8 @@
       "period": "2018 - 2021",
       "type": "study",
       "links": {
-        "linkedin": "https://www.linkedin.com/in/alxinc/",
-        "company": "https://example.edu"
+        "linkedin": "https://www.linkedin.com/in/alxinc/details/education/",
+        "company": "https://qi.edu.br/sobre-nos/"
       },
       "highlights": [
         "In-depth studies in software and computing engineering",
@@ -225,21 +184,8 @@
         "Founded the university's technology study group"
       ],
       "tech_stack": ["Java", "Python", "C", "JavaScript", "SQL", "Linux"],
-      "detailed_description": "Major degree in Information Technology with in-depth studies in software and computing engineering. Built a strong foundation in algorithms, data structures, software architecture, and system design.",
-      "images": [
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop",
-        "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=300&fit=crop"
-      ],
-      "projects": [
-        {
-          "label": "Full-Stack Web Application",
-          "url": "https://github.com/upALX"
-        },
-        {
-          "label": "Algorithm Visualizer",
-          "url": "https://github.com/upALX"
-        }
-      ]
+      "images": [],
+      "projects": []
     }
   ]
 }
