@@ -29,7 +29,12 @@
         "Redis",
         "GitHub Actions"
       ],
-      "images": [],
+      "images": [
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633019/IMG_20251212_162654488_HDR_nx13wm.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780636926/cake-1_ffwqap.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633093/IMG_20260130_180817470_hyzply.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780634832/img_7417_y2iw9y.jpg"
+      ],
       "contributions": []
     },
     {
@@ -56,7 +61,10 @@
         "PostgreSQL",
         "GitHub Actions"
       ],
-      "images": [],
+      "images": [
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633178/IMG_20251017_173041602_jc5tio.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633186/IMG_20250815_082442315_e6jrcm.jpg"
+      ],
       "contributions": []
     },
     {
@@ -84,7 +92,11 @@
         "Docker",
         "Google Cloud Platform"
       ],
-      "images": [],
+      "images": [
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633036/IMG_20240826_184603_473_epodcr.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633061/IMG_20240322_181713897_qyzwnc.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633431/IMG_20240611_183526412_hn3xmx.jpg"
+      ],
       "contributions": []
     },
     {
@@ -112,7 +124,12 @@
         "PostgreSQL",
         "Gitlab CI/CD"
       ],
-      "images": [],
+      "images": [
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633006/IMG_20220905_091901_952_lzbfbq.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633110/IMG_20220728_004105058_mb6jga.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780633490/IMG_20221003_174015341_evkaqd.jpg",
+        "https://res.cloudinary.com/dnfbvjyyw/image/upload/v1780632970/IMG_20220729_160052222_wdjbra.jpg"
+      ],
       "contributions": []
     },
     {
