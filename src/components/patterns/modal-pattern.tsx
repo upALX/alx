@@ -117,7 +117,7 @@ export function AnimatedModal({ slug }: { slug?: string }) {
                 </Carousel>
               ) : (
                 <p className="text-center text-sm text-neutral-400 dark:text-neutral-500">
-                  No related{' '}
+                  No public{' '}
                   {detail.type === 'work' ? 'contributions' : 'projects'} to
                   display.
                 </p>
