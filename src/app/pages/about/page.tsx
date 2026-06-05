@@ -1,7 +1,7 @@
 'use client';
 
 import { FAQALX } from '@/components/patterns/faq-pattern';
-import { cards_timeline } from '@/app/mapper/cards-timeline.json';
+import { cards_timeline } from '@/app/mapper';
 import { useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';
@@ -9,10 +9,10 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
 import { SOCIAL_LINKS } from '../../../../constants';
-import { GiGhost } from "react-icons/gi";
-import { ImPacman } from "react-icons/im";
-import { BiLoaderCircle } from "react-icons/bi";
-import { FaRunning } from "react-icons/fa";
+import { GiGhost } from 'react-icons/gi';
+import { ImPacman } from 'react-icons/im';
+import { BiLoaderCircle } from 'react-icons/bi';
+import { FaRunning } from 'react-icons/fa';
 import { GithubDataTypes } from '@/app/types/about-types';
 import { ImagePattern } from '@/components/patterns/image-pattern';
 import { links_information } from '@/app/mapper';
@@ -68,11 +68,11 @@ export default function AboutPage() {
 
   return loading ? (
     <div className="flex justify-center items-center h-screen gap-2">
-      <GiGhost  className="animate-bounce text-5xl text-blue-700" />
-      <BiLoaderCircle  className="animate-spin text-xs dark:text-white" />
+      <GiGhost className="animate-bounce text-5xl text-blue-700" />
+      <BiLoaderCircle className="animate-spin text-xs dark:text-white" />
       <ImPacman className="animate-bounce text-4xl text-yellow-400 duration-[1500ms] ease-in-out delay-500" />
-      <BiLoaderCircle  className="animate-spin text-xs dark:text-white" />
-      <FaRunning  className="animate-pulse text-4xl text-red-500" />
+      <BiLoaderCircle className="animate-spin text-xs dark:text-white" />
+      <FaRunning className="animate-pulse text-4xl text-red-500" />
     </div>
   ) : (
     <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
@@ -91,12 +91,12 @@ export default function AboutPage() {
             >
               <div className="animate-float w-full sm:max-w-max dark:hover:z-20">
                 <CardExperiencePattern
+                  slug={card.slug}
                   title={card.title}
                   description={card.description}
                   badge_description={card.badge_description}
                   text_content={card.text_content}
                   type_experience={card.type_experience}
-                  see_more_link={card.see_more_link}
                 />
               </div>
             </div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
         </div>
 
         <div className="flex flex-col items-center w-full gap-4">
-        <div className="flex flex-col items-center w-full sm:w-11/12 md:w-4/6 lg:w-3/4 xl:w-2/3 gap-4">
+          <div className="flex flex-col items-center w-full sm:w-11/12 md:w-4/6 lg:w-3/4 xl:w-2/3 gap-4">
             <div className="flex justify-center w-full">
               <TypographyPattern type="h3" text={'Quick stats'} />
             </div>
