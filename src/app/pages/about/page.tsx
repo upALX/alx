@@ -1,7 +1,7 @@
 'use client';
 
 import { FAQALX } from '@/components/patterns/faq-pattern';
-import { cards_timeline } from '@/app/mapper/cards-timeline.json';
+import { cards_timeline } from '@/app/mapper';
 import { useEffect, useState } from 'react';
 import { TypographyPattern } from '@/components/patterns/typography-pattern';
 import { CardExperiencePattern } from '@/components/patterns/card-experience-pattern';

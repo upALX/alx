@@ -30,7 +30,7 @@ type CardDetail = {
   slug: string;
   title: string;
   period: string;
-  type: string;
+  type: 'work' | 'study';
   links: {
     linkedin: string;
     company: string;
@@ -44,8 +44,8 @@ type CardDetail = {
 
 export function AnimatedModal({ slug }: { slug?: string }) {
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
-  const detail = snoop_information.card_details.find(
-    (d: CardDetail) => d.slug === slug
+  const detail = (snoop_information.card_details as CardDetail[]).find(
+    d => d.slug === slug
   );
   if (!detail) return null;
 
